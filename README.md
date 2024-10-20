@@ -55,4 +55,4 @@ This repo is synced automatically with [TryGhost/Themes](https://github.com/TryG
 
 # Copyright & License
 
-Copyright (c) 2013-2023 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2024 Ground Truth Data Inc. - Released under the [Apache License 2.0](LICENSE).
