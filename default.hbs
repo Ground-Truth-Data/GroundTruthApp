@@ -67,18 +67,24 @@
     </div>
 
     <footer class="gh-foot{{#unless @site.secondary_navigation}} no-menu{{/unless}} gh-outer">
-        <div class="gh-foot-inner gh-inner">
-            <div class="gh-copyright">
-                {{@site.title}} © {{date format="YYYY"}}
-            </div>
-            {{#if @site.secondary_navigation}}
-                <nav class="gh-foot-menu">
-                    {{navigation type="secondary"}}
-                </nav>
-            {{/if}}
-         
+    <div class="gh-foot-inner gh-inner">
+        <div class="gh-copyright">
+            {{@site.title}} © {{date format="YYYY"}}
         </div>
-    </footer>
+
+        <!-- Add Content Policy and Privacy Policy links here -->
+        <div class="gh-policy-links">
+            <a href="https://groundtruth.app/content-policy/" target="_blank">Content Policy</a> |
+            <a href="https://groundtruth.app/privacy-policy/" target="_blank">Privacy Policy</a>
+        </div>
+
+        {{#if @site.secondary_navigation}}
+            <nav class="gh-foot-menu">
+                {{navigation type="secondary"}}
+            </nav>
+        {{/if}}
+    </div>
+</footer>
 
 </div>
 
