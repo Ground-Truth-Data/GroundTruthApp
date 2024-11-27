@@ -162,6 +162,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="{{asset "built/main.min.js"}}"></script>
 
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header.gh-head');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+
 {{ghost_foot}}
 
 </body>

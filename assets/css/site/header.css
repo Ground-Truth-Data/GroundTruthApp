@@ -3,7 +3,27 @@ header.gh-head {
   top: 0;
   z-index: 1000;
   background-color: var(--color-white);
-  height: 8rem;
+  height: 8rem !important;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.gh-head-brand-wrapper {
+  position: absolute;
+  top: 1.5rem;
+}
+
+header.gh-head .gh-head-logo img {
+  max-height: 45px !important;
+  transition: all 0.3s ease-in-out;
+}
+
+header.gh-head.scrolled {
+  height: 5rem !important;
+}
+
+header.gh-head.scrolled .gh-head-logo img {
+  max-height: 35px !important;
 }
 
 .gh-head-menu,
