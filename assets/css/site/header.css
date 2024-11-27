@@ -1,15 +1,61 @@
-.gh-head {
-    background-color: transparent;
+header.gh-head {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--white-color);
+    height: auto;
 }
 
-.gh-head-menu,
-.gh-head-actions {
+.gh-head-actions, .gh-head-menu {
     font-size: 1.2rem;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.005em;
+    text-transform: uppercase;
 }
 
-.gh-head-btn {
-    --multiplier: 1.3;
+.gh-head .nav {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* Secondary Nav Styles */
+.gh-head-secondary {
+    position: static;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background-color: var(--white-color);
+    border-top: 1px solid var(--mid-gray-color);
+    border-bottom: 1px solid var(--mid-gray-color);
+    margin-top: 0;
+}
+
+.gh-head-secondary .gh-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 4vw;
+}
+
+.gh-secondary-menu {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+}
+
+.gh-secondary-menu a {
+    color: var(--color-darker-gray);
+    text-decoration: none;
+}
+
+.gh-secondary-menu a:hover {
+    color: var(--ghost-accent-color);
 }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
 
+
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,6 +67,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </header>
+
+    {{#if @site.secondary_navigation}}
+        <div class="gh-head-secondary">
+            <div class="gh-inner">
+                <nav class="gh-secondary-menu">
+                    {{navigation type="secondary"}}
+                </nav>
+            </div>
+        </div>
+    {{/if}}
 
     <div class="site-content">
         {{{body}}}
