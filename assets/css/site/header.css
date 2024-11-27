@@ -10,12 +10,23 @@ header.gh-head {
 
 .gh-head-brand-wrapper {
   position: absolute;
-  top: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gh-head-logo {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
 }
 
 header.gh-head .gh-head-logo img {
-  max-height: 45px !important;
+  max-height: 65px !important;
+  max-width: 100%;
+  height: auto;
   transition: all 0.3s ease-in-out;
+  filter: brightness(1.1) contrast(1.05) saturate(1.2) sepia(0.2);
 }
 
 header.gh-head.scrolled {
@@ -23,7 +34,7 @@ header.gh-head.scrolled {
 }
 
 header.gh-head.scrolled .gh-head-logo img {
-  max-height: 35px !important;
+  max-height: 40px !important;
 }
 
 .gh-head-menu,
@@ -92,4 +103,8 @@ header.gh-head.scrolled .gh-head-logo img {
 .gh-head-logo img {
   max-height: 45px; /* Adjust this value if needed */
   /* display: block; Removes any bottom spacing */
+}
+
+.gh-head-brand {
+    width: 120px;  /* Reduced from 200px - adjust as needed */
 }
