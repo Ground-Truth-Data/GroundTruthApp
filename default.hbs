@@ -71,6 +71,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {{#if @site.secondary_navigation}}
         <div class="gh-head-secondary">
             <div class="gh-inner">
+                <div class="secondary-header-text">
+                    EVIDENCE-BASED <span>FOREST NEWS</span>
+                </div>
                 <nav class="gh-secondary-menu">
                     {{navigation type="secondary"}}
                 </nav>
@@ -161,17 +164,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {{/is}}
 
 <script src="{{asset "built/main.min.js"}}"></script>
-
-<script>
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header.gh-head');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-</script>
+<script src="{{asset "js/scroll.js"}}"></script>
 
 {{ghost_foot}}
 

@@ -3,7 +3,7 @@ header.gh-head {
   top: 0;
   z-index: 1000;
   background-color: var(--color-white);
-  height: 8rem !important;
+  height: 8rem;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
@@ -12,6 +12,9 @@ header.gh-head {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .gh-head-logo {
@@ -19,10 +22,12 @@ header.gh-head {
   font-weight: 700;
   letter-spacing: -0.02em;
   position: relative;
+  margin: 0;
+  line-height: 0;
 }
 
 header.gh-head .gh-head-logo img {
-  max-height: 65px !important;
+  max-height: 65px;
   max-width: 100%;
   height: auto;
   transition: all 0.3s ease-in-out;
@@ -30,11 +35,11 @@ header.gh-head .gh-head-logo img {
 }
 
 header.gh-head.scrolled {
-  height: 5rem !important;
+  height: 5rem;
 }
 
 header.gh-head.scrolled .gh-head-logo img {
-  max-height: 40px !important;
+  max-height: 40px;
 }
 
 .gh-head-menu,
@@ -45,66 +50,72 @@ header.gh-head.scrolled .gh-head-logo img {
   letter-spacing: 0.005em;
 }
 
-.gh-head-btn {
-  --multiplier: 1.3;
-}
-
 /* Secondary Nav Styles */
 .gh-head-secondary {
-  position: static;
   left: 0;
   right: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
   background-color: var(--white-color);
   border-top: 1px solid var(--mid-gray-color);
   border-bottom: 1px solid var(--mid-gray-color);
   margin-top: 0;
+  padding-left: var(--gap);
+  padding-right: var(--gap);
 }
 
 .gh-head-secondary .gh-inner {
-  max-width: 1200px;
+  max-width: var(--container-width, 1200px);
   margin: 0 auto;
-  padding: 6px 4vw;
+  padding: 6px 0;
+  display: flex;
+  width: 100%;
+}
+
+/* Add a media query to handle the breakpoint */
+@media (min-width: 1250px) {
+  .gh-head-secondary {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .gh-head-secondary .gh-inner {
+    width: var(--container-width, 1200px);
+  }
+}
+
+.secondary-header-text {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-left: 0;
+}
+
+.secondary-header-text span {
+  color: #8028de;
 }
 
 .gh-secondary-menu {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 24px;
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.005em;
   text-transform: uppercase;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .gh-secondary-menu a {
   color: var(--color-darker-gray);
   text-decoration: none;
+  padding: 10px 0;
+  white-space: nowrap;
 }
 
 .gh-secondary-menu a:hover {
   color: var(--ghost-accent-color);
 }
 
-/* Add these styles to your existing header.css */
-.gh-head-brand-wrapper {
-  margin: 0; /* Remove any default margins */
-  display: flex;
-  align-items: center;
-}
-
-.gh-head-logo {
-  margin: 0; /* Remove any default margins */
-  line-height: 0; /* This helps remove any extra space from line height */
-}
-
-.gh-head-logo img {
-  max-height: 45px; /* Adjust this value if needed */
-  /* display: block; Removes any bottom spacing */
-}
-
 .gh-head-brand {
-    width: 120px;  /* Reduced from 200px - adjust as needed */
+  width: 120px;
 }
