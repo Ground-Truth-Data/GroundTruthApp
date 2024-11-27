@@ -1,12 +1,10 @@
 header.gh-head {
-  position: sticky !important;
+  position: sticky;
   top: 0;
   z-index: 1000;
-  /* background-color: transparent; */
+  background-color: var(--color-white);
+  height: 8rem;
 }
-/* .gh-head {
-  background-color: transparent;
-} */
 
 .gh-head-menu,
 .gh-head-actions {
@@ -37,7 +35,7 @@ header.gh-head {
 .gh-head-secondary .gh-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 4vw;
+  padding: 6px 4vw;
 }
 
 .gh-secondary-menu {
@@ -73,5 +71,5 @@ header.gh-head {
 
 .gh-head-logo img {
   max-height: 45px; /* Adjust this value if needed */
-  display: block; /* Removes any bottom spacing */
+  /* display: block; Removes any bottom spacing */
 }
