@@ -41,7 +41,6 @@ header.gh-head.scrolled {
 header.gh-head.scrolled .gh-head-logo img {
   max-height: 40px;
 }
-
 /* Secondary Nav Styles */
 .gh-head-secondary {
   left: 0;
@@ -161,31 +160,7 @@ header.gh-head.scrolled .gh-head-logo img {
   display: none;
 }
 
-@media (max-width: 770px) {
-  .gh-head-brand {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    min-width: 200px;
-  }
-
-  .gh-head-brand-wrapper {
-    flex: 1;
-  }
-
-  .gh-head-brand > :not(.gh-head-brand-wrapper) {
-    display: flex;
-    gap: 15px;
-    margin-left: auto;
-  }
-
-  .gh-burger,
-  .gh-search.gh-icon-btn {
-    display: block !important;
-    position: relative !important;
-    min-width: 30px;
-  }
-
+@media (max-width: 768px) {
   .gh-head-secondary .gh-secondary-menu {
     display: none; /* Hide original secondary menu links */
   }
@@ -205,23 +180,29 @@ header.gh-head.scrolled .gh-head-logo img {
   .gh-head-brand {
     display: flex;
     align-items: center;
+    justify-content: start;
     width: 100%;
   }
 
   .gh-head-brand-wrapper {
-    flex: 1;  /* Takes up available space, pushing buttons right */
+    flex: 1;
   }
 
-  /* Show both buttons */
   .gh-burger,
   .gh-search.gh-icon-btn {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    display: block;
+    margin-left: auto;
   }
 
-  /* Add spacing between buttons */
   .gh-burger {
-    margin-right: 15px !important;
+    margin-right: 15px;
+  }
+
+  header.gh-head .gh-head-logo img {
+    max-height: 65px !important;
+  }
+
+  header.gh-head.scrolled .gh-head-logo img {
+    max-height: 55px !important;
   }
 }

@@ -1,62 +1,62 @@
 .navigation {
-    display: flex;
-    margin-top: 64px;
+  display: flex;
+  margin-top: 64px;
 }
 
 .navigation-item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
 }
 
 .navigation-item:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .navigation-previous {
-    margin-right: 16px;
+  margin-right: 16px;
 }
 
 .navigation-next {
-    align-items: flex-end;
-    margin-left: auto;
-    text-align: right;
+  align-items: flex-end;
+  margin-left: auto;
+  text-align: right;
 }
 
 .navigation-label {
-    position: relative;
-    z-index: 2;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--secondary-text-color);
-    text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--secondary-text-color);
+  text-transform: uppercase;
 }
 
 .navigation-title {
-    position: relative;
-    z-index: 2;
-    margin: 8px 0 0;
-    font-size: 2rem;
-    line-height: 1.4;
-    word-break: break-word;
+  position: relative;
+  z-index: 2;
+  margin: 8px 0 0;
+  font-size: 2rem;
+  line-height: 1.4;
+  word-break: break-word;
 }
 
 .navigation-item:hover .navigation-title {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
-@media (max-width: 767px) {
-    .navigation {
-        display: block;
-    }
+@media (max-width: 768px) {
+  .navigation {
+    display: block;
+  }
 
-    .navigation-item {
-        width: 100%;
-    }
+  .navigation-item {
+    width: 100%;
+  }
 
-    .navigation-next {
-        margin-top: 8px;
-    }
+  .navigation-next {
+    margin-top: 8px;
+  }
 }
