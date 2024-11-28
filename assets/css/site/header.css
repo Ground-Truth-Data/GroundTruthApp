@@ -162,13 +162,37 @@ header.gh-head.scrolled .gh-head-logo img {
 }
 
 @media (max-width: 770px) {
+  .gh-head-brand {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 200px;
+  }
+
+  .gh-head-brand-wrapper {
+    flex: 1;
+  }
+
+  .gh-head-brand > :not(.gh-head-brand-wrapper) {
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+  }
+
+  .gh-burger,
+  .gh-search.gh-icon-btn {
+    display: block !important;
+    position: relative !important;
+    min-width: 30px;
+  }
+
   .gh-head-secondary .gh-secondary-menu {
-    display: none;  /* Hide original secondary menu links */
+    display: none; /* Hide original secondary menu links */
   }
 
   /* Move secondary nav into hamburger menu */
   .gh-head-menu .mobile-secondary-nav {
-    display: block;  /* Show inside hamburger menu */
+    display: block; /* Show inside hamburger menu */
   }
 
   .gh-head-menu-separator {
@@ -176,5 +200,28 @@ header.gh-head.scrolled .gh-head-logo img {
     height: 1px;
     background: var(--color-light-gray);
     margin: 20px 0;
+  }
+
+  .gh-head-brand {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .gh-head-brand-wrapper {
+    flex: 1;  /* Takes up available space, pushing buttons right */
+  }
+
+  /* Show both buttons */
+  .gh-burger,
+  .gh-search.gh-icon-btn {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Add spacing between buttons */
+  .gh-burger {
+    margin-right: 15px !important;
   }
 }
