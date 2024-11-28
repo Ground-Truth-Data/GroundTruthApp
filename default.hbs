@@ -37,11 +37,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <nav class="gh-head-menu">
                 {{navigation}}
-                {{#unless @site.members_enabled}}
-                    {{#match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                    {{/match}}
-                {{/unless}}
+                {{#if @site.secondary_navigation}}
+                    <div class="mobile-secondary-nav">
+                        <div class="gh-head-menu-separator"></div>
+                        {{navigation type="secondary"}}
+                    </div>
+                {{/if}}
             </nav>
 
             <div class="gh-head-actions">
