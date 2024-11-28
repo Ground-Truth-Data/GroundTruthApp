@@ -41,6 +41,7 @@ header.gh-head.scrolled {
 header.gh-head.scrolled .gh-head-logo img {
   max-height: 40px;
 }
+
 /* Secondary Nav Styles */
 .gh-head-secondary {
   left: 0;
@@ -60,17 +61,6 @@ header.gh-head.scrolled .gh-head-logo img {
   max-width: var(--container-width, 1200px);
   margin: 0 auto;
   padding: 6px 0;
-}
-
-@media (min-width: 1250px) {
-  .gh-head-secondary {
-    display: flex;
-    justify-content: center;
-  }
-
-  .gh-head-secondary .gh-inner {
-    width: var(--container-width, 1200px);
-  }
 }
 
 .secondary-header-text {
@@ -125,7 +115,7 @@ header.gh-head.scrolled .gh-head-logo img {
   width: 120px;
 }
 
-/* Then we'll add back the primary nav styles */
+/* Primary nav styles */
 .gh-head-menu {
   font-size: 1.2rem;
   font-weight: 700;
@@ -160,14 +150,24 @@ header.gh-head.scrolled .gh-head-logo img {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .gh-head-secondary .gh-secondary-menu {
-    display: none; /* Hide original secondary menu links */
+@media (min-width: 1250px) {
+  .gh-head-secondary {
+    display: flex;
+    justify-content: center;
   }
 
-  /* Move secondary nav into hamburger menu */
+  .gh-head-secondary .gh-inner {
+    width: var(--container-width, 1200px);
+  }
+}
+
+@media (max-width: 768px) {
+  .gh-head-secondary .gh-secondary-menu {
+    display: none;
+  }
+
   .gh-head-menu .mobile-secondary-nav {
-    display: block; /* Show inside hamburger menu */
+    display: block;
   }
 
   .gh-head-menu-separator {
@@ -198,6 +198,7 @@ header.gh-head.scrolled .gh-head-logo img {
     margin-right: 15px;
   }
 
+  /* Control shrinking */
   header.gh-head .gh-head-logo img {
     max-height: 65px !important;
   }
@@ -205,4 +206,35 @@ header.gh-head.scrolled .gh-head-logo img {
   header.gh-head.scrolled .gh-head-logo img {
     max-height: 55px !important;
   }
+
+  /* Position in hamburger menu */
+  .gh-head.is-open .gh-head-brand {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 var(--gap);
+    background: white;
+    z-index: 9999;
+  }
+
+  .gh-head.is-open .gh-head-menu {
+    margin-top: 80px;
+  }
+}
+
+/* Position logo above menu when menu is open */
+body.is-head-open header.gh-head .gh-head-brand {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 var(--gap);
+    background: white;
+    z-index: 9999;
+}
+
+/* Adjust menu position to prevent overlap */
+body.is-head-open .gh-head-menu {
+    margin-top: 80px;
 }
