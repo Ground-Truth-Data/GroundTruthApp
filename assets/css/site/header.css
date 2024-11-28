@@ -161,7 +161,7 @@ header.gh-head.scrolled .gh-head-logo img {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .gh-head-secondary .gh-secondary-menu {
     display: none;
   }
@@ -225,16 +225,16 @@ header.gh-head.scrolled .gh-head-logo img {
 
 /* Position logo above menu when menu is open */
 body.is-head-open header.gh-head .gh-head-brand {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0 var(--gap);
-    background: white;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 var(--gap);
+  background: white;
+  z-index: 9999;
 }
 
 /* Adjust menu position to prevent overlap */
 body.is-head-open .gh-head-menu {
-    margin-top: 80px;
+  margin-top: 80px;
 }
