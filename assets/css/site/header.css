@@ -42,14 +42,6 @@ header.gh-head.scrolled .gh-head-logo img {
   max-height: 40px;
 }
 
-.gh-head-menu,
-.gh-head-actions {
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.005em;
-}
-
 /* Secondary Nav Styles */
 .gh-head-secondary {
   left: 0;
@@ -70,13 +62,12 @@ header.gh-head.scrolled .gh-head-logo img {
   width: 100%;
 }
 
-/* Add a media query to handle the breakpoint */
 @media (min-width: 1250px) {
   .gh-head-secondary {
     display: flex;
     justify-content: center;
   }
-  
+
   .gh-head-secondary .gh-inner {
     width: var(--container-width, 1200px);
   }
@@ -103,6 +94,20 @@ header.gh-head.scrolled .gh-head-logo img {
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: nowrap;
+}
+
+.gh-secondary-menu .nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 24px;
+}
+
+.gh-secondary-menu .nav li {
+  margin: 0;
+  padding: 0;
 }
 
 .gh-secondary-menu a {
@@ -118,4 +123,34 @@ header.gh-head.scrolled .gh-head-logo img {
 
 .gh-head-brand {
   width: 120px;
+}
+
+/* Then we'll add back the primary nav styles */
+.gh-head-menu {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+}
+
+.gh-head-menu a {
+  color: var(--color-darker-gray);
+  text-decoration: none;
+}
+
+.gh-head-menu a:hover {
+  color: var(--ghost-accent-color);
+}
+
+.gh-head-link {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    color: var(--color-darker-gray);
+    text-decoration: none;
+}
+
+.gh-head-link:hover {
+    color: var(--ghost-accent-color);
 }
