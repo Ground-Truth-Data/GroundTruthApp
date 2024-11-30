@@ -1,0 +1,64 @@
+/* Light mode (default) */
+:root[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --card-color: #f4f4f4;
+  --header-color: #ffffff;
+  --link-color: #121212;
+  --heading-color: #121212;
+  --nav-text-color: #121212;
+  --footer-color: #f4f4f4;
+}
+
+/* Dark mode */
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #212121;
+  --header-color: #121212;
+  --link-color: #ffffff;
+  --heading-color: #ffffff;
+  --nav-text-color: #ffffff;
+  --footer-color: #212121;
+}
+
+/* Apply variables */
+body, 
+.gh-site,
+body:not(.post-template):not(.page-template) {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color);
+  background-image: none !important;
+}
+
+/* Navigation - with !important to override */
+.gh-head,
+.gh-head-secondary {
+  background-color: var(--header-color) !important;
+}
+
+/* Force header text colors */
+.gh-head-menu a,
+.gh-head-link,
+.nav a,
+.gh-secondary-menu a,
+.secondary-header-text,
+.gh-head-menu .nav li a,
+h1, h2, h3, h4, h5, h6,
+.gh-article-title,
+.post-title {
+  color: var(--nav-text-color) !important;
+}
+
+/* Posts */
+.post-wrapper {
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
+/* Card Footer */
+.post-footer {
+  background-color: var(--footer-color) !important;
+  color: var(--text-color) !important;
+  border-top: 1px solid var(--text-color);
+}

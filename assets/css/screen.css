@@ -1,4 +1,5 @@
 @import "@tryghost/shared-theme-assets/assets/css/v1/screen.css";
+@import "theme.css";
 @import "general/fonts.css";
 @import "general/basics.css";
 @import "site/header.css";
@@ -12,3 +13,55 @@
 @import "blog/comment.css";
 @import "blog/related.css";
 @import "misc/utilities.css";
+
+/* Theme styles - direct targeting */
+[data-theme="dark"] body {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .gh-head {
+    background-color: #121212 !important;
+}
+
+[data-theme="dark"] .gh-head-menu a,
+[data-theme="dark"] .gh-head-link,
+[data-theme="dark"] .gh-secondary-menu a {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .post-wrapper {
+    background-color: #212121 !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .gh-head-secondary {
+    background-color: #121212 !important;
+    border-color: #212121 !important;
+}
+
+/* Light theme */
+[data-theme="light"] body {
+    background-color: #ffffff !important;
+    color: #121212 !important;
+}
+
+[data-theme="light"] .gh-head {
+    background-color: #ffffff !important;
+}
+
+[data-theme="light"] .gh-head-menu a,
+[data-theme="light"] .gh-head-link,
+[data-theme="light"] .gh-secondary-menu a {
+    color: #121212 !important;
+}
+
+[data-theme="light"] .post-wrapper {
+    background-color: #f4f4f4 !important;
+    color: #121212 !important;
+}
+
+[data-theme="light"] .gh-head-secondary {
+    background-color: #ffffff !important;
+    border-color: #f4f4f4 !important;
+}

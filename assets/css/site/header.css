@@ -2,10 +2,24 @@ header.gh-head {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--color-white);
+  background-color: var(--bg-text-biColor) !important;
+  color: var(--card-biColour) !important;
   height: 8rem;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+}
+
+.gh-head-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.gh-head-brand {
+  display: flex;
+  align-items: center;
+  width: 120px;
 }
 
 .gh-head-brand-wrapper {
@@ -26,257 +40,87 @@ header.gh-head {
   line-height: 0;
 }
 
-header.gh-head .gh-head-logo img {
+.gh-head-logo img {
   max-height: 65px;
   max-width: 100%;
   height: auto;
   transition: all 0.3s ease-in-out;
-  filter: brightness(1.1) contrast(1.05) saturate(1.2) sepia(0.2);
 }
 
-header.gh-head.scrolled {
-  height: 5rem;
-}
-
-header.gh-head.scrolled .gh-head-logo img {
-  max-height: 40px;
-}
-
-/* Secondary Nav Styles */
-.gh-head-secondary {
-  left: 0;
-  right: 0;
-  background-color: var(--white-color);
-  border-top: 1px solid var(--mid-gray-color);
-  border-bottom: 1px solid var(--mid-gray-color);
-  margin-top: 0;
-  padding-left: var(--gap);
-  padding-right: var(--gap);
-}
-
-.gh-head-secondary .gh-inner {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  max-width: var(--container-width, 1200px);
-  margin: 0 auto;
-  padding: 6px 0;
-}
-
-.secondary-header-text {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-left: 0;
-}
-
-.secondary-header-text span {
-  color: #8028de;
-}
-
-.gh-secondary-menu {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.005em;
-  text-transform: uppercase;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-wrap: nowrap;
-}
-
-.gh-secondary-menu .nav {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 24px;
-}
-
-.gh-secondary-menu .nav li {
-  margin: 0;
-  padding: 0;
-}
-
-.gh-secondary-menu a {
-  color: var(--color-darker-gray);
-  text-decoration: none;
-  padding: 10px 0;
-  white-space: nowrap;
-}
-
-.gh-secondary-menu a:hover {
-  color: var(--ghost-accent-color);
-}
-
-.gh-head-brand {
-  width: 120px;
-}
-
-/* Primary nav styles */
 .gh-head-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.005em;
 }
 
-.gh-head-menu a {
-  color: var(--color-darker-gray);
-  text-decoration: none;
+.gh-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.gh-head-menu a:hover {
-  color: var(--ghost-accent-color);
+.gh-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
 }
 
-.gh-head-link {
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.005em;
-  color: var(--color-darker-gray);
-  text-decoration: none;
-}
-
-.gh-head-link:hover {
-  color: var(--ghost-accent-color);
-}
-
-/* Hide mobile secondary nav by default */
-.mobile-secondary-nav {
+/* Hamburger menu */
+.gh-burger {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
   display: none;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  margin-right: -3px;
+  padding: 0;
 }
 
-@media (min-width: 1250px) {
-  .gh-head-secondary {
-    display: flex;
-    justify-content: center;
-  }
-
-  .gh-head-secondary .gh-inner {
-    width: var(--container-width, 1200px);
-  }
+.gh-burger:before,
+.gh-burger:after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  width: 24px;
+  height: 1px;
+  background-color: var(--card-biColour);
+  transition: all 0.2s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
 }
 
+.gh-burger:before { top: 11px; }
+.gh-burger:after { bottom: 11px; }
+
+/* Mobile styles */
 @media (max-width: 767px) {
-  .gh-head-secondary .gh-secondary-menu {
-    display: none;
-  }
-
-  .gh-head-menu .mobile-secondary-nav {
-    display: block;
-  }
-
-  .gh-head-menu-separator {
-    width: 100%;
-    height: 1px;
-    background: var(--color-light-gray);
-    margin: 20px 0;
-  }
-
-  .gh-head-brand {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    width: 100%;
-  }
-
-  .gh-head-brand-wrapper {
-    flex: 1;
-  }
-
-  .gh-burger,
-  .gh-search.gh-icon-btn {
-    display: block;
-    margin-left: auto;
-  }
-
   .gh-burger {
+    display: block;
     margin-right: 15px;
   }
 
-  /* Control shrinking */
-  header.gh-head .gh-head-logo img {
-    max-height: 65px !important;
-  }
-
-  header.gh-head.scrolled .gh-head-logo img {
-    max-height: 55px !important;
-  }
-
-  /* Position in hamburger menu */
-  .gh-head.is-open .gh-head-brand {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0 var(--gap);
-    background: white;
-    z-index: 9999;
+  .gh-head-menu {
+    display: none;
   }
 
   .gh-head.is-open .gh-head-menu {
+    display: flex;
     margin-top: 80px;
   }
 }
 
-/* Position logo above menu when menu is open */
-body.is-head-open header.gh-head .gh-head-brand {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 0 var(--gap);
-  background: white;
-  z-index: 9999;
-}
-
-/* Adjust menu position to prevent overlap */
-body.is-head-open .gh-head-menu {
-  margin-top: 80px;
-}
-
-.gh-head-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.gh-head-brand {
-    display: flex;
-    align-items: center;
-}
-
-.gh-head-menu {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.gh-head-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.gh-icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: background-color 0.3s;
-}
-
-#theme-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
