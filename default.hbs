@@ -23,48 +23,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="gh-head-inner gh-inner">
             <div class="gh-head-brand">
                 <div class="gh-head-brand-wrapper">
-                    <a class="gh-head-logo" href="{{@site.url}}">
-                        {{#if @site.logo}}
-                            <img src="{{@site.logo}}" alt="{{@site.title}}">
-                        {{else}}
-                            {{@site.title}}
-                        {{/if}}
+                    <a class="gh-head-logo" href="http://localhost:2368">
+                        <img src="http://localhost:2368/content/images/2024/11/2024-11-26-GT-Logo-Black.png" alt="Ground Truth Forest News">
                     </a>
                 </div>
-                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                <button class="gh-burger"></button>
             </div>
 
             <nav class="gh-head-menu">
-                {{navigation}}
-                {{#if @site.secondary_navigation}}
-                    <div class="mobile-secondary-nav">
-                        <div class="gh-head-menu-separator"></div>
-                        {{navigation type="secondary"}}
-                    </div>
-                {{/if}}
+                <ul class="nav">
+                    <li class="nav-home nav-current"><a href="http://localhost:2368/">Home</a></li>
+                    <li class="nav-about"><a href="http://localhost:2368/about/">About</a></li>
+                    <li class="nav-contact"><a href="http://localhost:2368/contact-info/">Contact</a></li>
+                </ul>
             </nav>
 
             <div class="gh-head-actions">
-                {{#unless @site.members_enabled}}
-                    {{^match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                    {{/match}}
-                {{else}}
-                    <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                    <div class="gh-head-members">
-                        {{#unless @member}}
-                            {{#unless @site.members_invite_only}}
-                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
-                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe</a>
-                            {{else}}
-                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signin" data-portal="signin">Sign in</a>
-                            {{/unless}}
-                        {{else}}
-                            <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/account" data-portal="account">Account</a>
-                        {{/unless}}
-                    </div>
-                {{/unless}}
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search="">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
+                <button id="theme-toggle" class="gh-icon-btn" aria-label="Toggle Theme">🌓</button>
+                <div class="gh-head-members">
+                    <a class="gh-head-link gh-portal-close" href="#/portal/signin" data-portal="signin">Sign in</a>
+                    <a class="gh-head-btn gh-btn gh-primary-btn gh-portal-close" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                </div>
             </div>
         </div>
     </header>

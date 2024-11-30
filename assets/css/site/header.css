@@ -238,3 +238,45 @@ body.is-head-open header.gh-head .gh-head-brand {
 body.is-head-open .gh-head-menu {
   margin-top: 80px;
 }
+
+.gh-head-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.gh-head-brand {
+    display: flex;
+    align-items: center;
+}
+
+.gh-head-menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.gh-head-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gh-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
