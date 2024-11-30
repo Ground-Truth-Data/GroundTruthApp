@@ -3,11 +3,11 @@
   --bg-color: #ffffff;
   --text-color: #121212;
   --card-color: #f4f4f4;
-  --header-color: #ffffff;
-  --link-color: #121212;
-  --heading-color: #121212;
-  --nav-text-color: #121212;
-  --footer-color: #f4f4f4;
+  --header-color: var(--bg-color);
+  --link-color: var(--text-color);
+  --heading-color: var(--text-color);
+  --nav-text-color: var(--text-color);
+  --footer-color: var(--card-color);
 }
 
 /* Dark mode */
@@ -15,15 +15,15 @@
   --bg-color: #121212;
   --text-color: #ffffff;
   --card-color: #212121;
-  --header-color: #121212;
-  --link-color: #ffffff;
-  --heading-color: #ffffff;
-  --nav-text-color: #ffffff;
-  --footer-color: #212121;
+  --header-color: var(--bg-color);
+  --link-color: var(--text-color);
+  --heading-color: var(--text-color);
+  --nav-text-color: var(--text-color);
+  --footer-color: var(--card-color);
 }
 
 /* Apply variables */
-body, 
+body,
 .gh-site,
 body:not(.post-template):not(.page-template) {
   background-color: var(--bg-color) !important;
@@ -44,7 +44,12 @@ body:not(.post-template):not(.page-template) {
 .gh-secondary-menu a,
 .secondary-header-text,
 .gh-head-menu .nav li a,
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .gh-article-title,
 .post-title {
   color: var(--nav-text-color) !important;

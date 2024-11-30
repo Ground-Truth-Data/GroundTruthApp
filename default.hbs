@@ -34,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
                 <button id="theme-toggle-mobile" class="gh-icon-btn" aria-label="Toggle Theme">🌓</button>
-                <button class="gh-burger"></button>
+                <button class="gh-burger gh-icon-btn" aria-label="Menu">☰</button>
             </div>
 
             <nav class="gh-head-menu">
@@ -168,7 +168,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
         
         function setTheme(isDark) {
-            // Add/remove classes instead of attributes
             document.body.classList.toggle('theme-dark', isDark);
             document.body.classList.toggle('theme-light', !isDark);
             
@@ -186,6 +185,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         // Set initial theme
         setTheme(false);
+
+        // Menu toggle functionality
+        const menuToggle = document.querySelector('[data-menu-toggle]');
+        const header = document.getElementById('gh-head');
+        
+        if (menuToggle && header) {
+            menuToggle.addEventListener('click', () => {
+                header.classList.toggle('is-open');
+            });
+        }
     });
 </script>
 
