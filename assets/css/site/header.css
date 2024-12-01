@@ -121,3 +121,107 @@ body.theme-dark .gh-burger {
 body.theme-light .gh-burger {
   color: #121212;
 }
+
+.mobile-menu-page {
+    padding: 40px 20px;
+    background: var(--bg-text-biColor);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-nav {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.mobile-menu-primary,
+.mobile-menu-secondary {
+    margin: 20px 0;
+}
+
+.mobile-menu-secondary {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-menu-nav .nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu-nav .nav a {
+    display: block;
+    color: var(--card-biColour);
+    font-size: 24px;
+    padding: 15px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.mobile-menu-nav .nav a:hover {
+    opacity: 0.7;
+}
+
+.custom-nav-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.custom-nav-btn svg {
+    fill: var(--card-biColour);
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 767px) {
+    .custom-nav-btn {
+        display: inline-flex;
+    }
+}
+
+.custom-nav-btn.gh-icon-btn {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .custom-nav-btn.gh-icon-btn {
+        display: inline-flex;
+        color: var(--card-biColour);
+    }
+}
+
+.mobile-menu-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: var(--card-biColour);
+    z-index: 9999;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.mobile-menu-close svg {
+    width: 40px;
+    height: 40px;
+}
+
+.mobile-menu-close svg path {
+    fill: currentColor;
+}
+
+/* Dark mode */
+body.theme-dark .mobile-menu-close {
+    color: white;
+}
+
+/* Light mode */
+body.theme-light .mobile-menu-close {
+    color: #121212;
+}
