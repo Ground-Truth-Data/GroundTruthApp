@@ -4,7 +4,7 @@
   --text-color: #121212;
   --card-color: #f4f4f4;
   --header-color: var(--bg-color);
-  --link-color: var(--text-color);
+  --link-color: #0066cc;
   --heading-color: var(--text-color);
   --nav-text-color: var(--text-color);
   --footer-color: var(--card-color);
@@ -16,7 +16,7 @@
   --text-color: #ffffff;
   --card-color: #212121;
   --header-color: var(--bg-color);
-  --link-color: var(--text-color);
+  --link-color: #66b3ff;
   --heading-color: var(--text-color);
   --nav-text-color: var(--text-color);
   --footer-color: var(--card-color);
@@ -66,4 +66,23 @@ h6,
   background-color: var(--footer-color) !important;
   color: var(--text-color) !important;
   border-top: 1px solid var(--text-color);
+}
+
+/* Links styling */
+a:not(.gh-head-logo):not(.gh-btn):not(.gh-head-link):not(.nav-current) {
+  color: var(--link-color) !important;
+  text-decoration: none;
+}
+
+a:not(.gh-head-logo):not(.gh-btn):not(.gh-head-link):not(.nav-current):hover {
+  text-decoration: underline;
+}
+
+/* Author links */
+.author-name-content a,
+.author-list a,
+.author-header a,
+.author-link,
+a[href^="/author/"] {
+  color: var(--link-color) !important;
 }
