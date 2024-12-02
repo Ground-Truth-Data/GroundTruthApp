@@ -7,6 +7,11 @@
                 src="{{img_url feature_image}}"
                 alt="{{title}}"
                 loading="lazy"
+                {{#if isFirst}}
+                    width="1200" height="800"
+                {{else}}
+                    width="720" height="480"
+                {{/if}}
             >
         {{else}}
         <figure class="post-media">
@@ -22,6 +27,11 @@
                     src="{{img_url feature_image size="l"}}"
                     alt="{{title}}"
                     loading="lazy"
+                    {{#if isFirst}}
+                        width="1200" height="800"
+                    {{else}}
+                        width="720" height="480"
+                    {{/if}}
                 >
             </div>
         </figure>
