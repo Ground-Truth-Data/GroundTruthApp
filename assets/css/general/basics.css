@@ -10,12 +10,34 @@
   --shadow-base: 0 0 10px rgba(0, 0, 0, 0.02);
   --content-font-size: 1.7rem;
   --menu-font-size: 1.2rem;
+  --background-color: #ffffff;
+  --bg-color: #ffffff;
+  color-scheme: light dark;
+}
+
+html {
+  background-color: var(--bg-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --card-color: #212121;
+  }
+  
+  html {
+    background-color: var(--bg-color);
+  }
 }
 
 [data-theme="dark"] {
   --bg-color: #121212;
+  --background-color: #121212;
   --text-color: #ffffff;
   --card-color: #212121;
+  background-color: var(--bg-color);
 }
 
 body:not(.post-template):not(.page-template) {
