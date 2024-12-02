@@ -11,7 +11,7 @@ header.gh-head {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
   color: var(--text-color);
   height: var(--header-height);
   transition: all var(--transition-speed) ease-in-out;
