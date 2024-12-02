@@ -2,8 +2,8 @@ header.gh-head {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--bg-text-biColor) !important;
-  color: var(--card-biColour) !important;
+  background-color: var(--bg-text-biColor);
+  color: var(--card-biColour);
   height: 8rem;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
@@ -77,31 +77,19 @@ header.gh-head {
   transition: background-color 0.3s;
 }
 
-/* Hamburger menu */
-.gh-burger {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
+/* Custom mobile menu button */
+.custom-nav-btn {
   display: none;
-  height: 30px;
-  width: 30px;
-  position: relative;
-  padding: 0;
-  font-size: 24px;
-  color: inherit;
 }
 
-/* Mobile styles */
+/* Mobile styles - consolidated media queries */
 @media (max-width: 767px) {
-  .gh-burger {
-    display: block;
-  }
-
   .gh-head-menu {
     display: none;
+  }
+
+  .custom-nav-btn {
+    display: inline-flex;
   }
 
   .gh-head.is-open .gh-head-menu {
