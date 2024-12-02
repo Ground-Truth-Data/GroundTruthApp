@@ -14,54 +14,47 @@
 @import "blog/related.css";
 @import "misc/utilities.css";
 
-/* Theme styles - direct targeting */
-[data-theme="dark"] body {
-    background-color: #121212 !important;
-    color: #ffffff !important;
+/* Theme styles - Using more specific selectors */
+:root[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --header-bg: #121212;
+    --post-bg: #212121;
+    --secondary-bg: #121212;
+    --border-color: #212121;
 }
 
-[data-theme="dark"] .gh-head {
-    background-color: #121212 !important;
+:root[data-theme="light"] {
+    --background-color: #ffffff;
+    --text-color: #121212;
+    --header-bg: #ffffff;
+    --post-bg: #f4f4f4;
+    --secondary-bg: #ffffff;
+    --border-color: #f4f4f4;
 }
 
-[data-theme="dark"] .gh-head-menu a,
-[data-theme="dark"] .gh-head-link,
-[data-theme="dark"] .gh-secondary-menu a {
-    color: #ffffff !important;
+/* Apply theme variables */
+:root[data-theme] body {
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-[data-theme="dark"] .post-wrapper {
-    background-color: #212121 !important;
-    color: #ffffff !important;
+:root[data-theme] .gh-head {
+    background-color: var(--header-bg);
 }
 
-[data-theme="dark"] .gh-head-secondary {
-    background-color: #121212 !important;
-    border-color: #212121 !important;
+:root[data-theme] .gh-head-menu a,
+:root[data-theme] .gh-head-link,
+:root[data-theme] .gh-secondary-menu a {
+    color: var(--text-color);
 }
 
-/* Light theme */
-[data-theme="light"] body {
-    background-color: #ffffff !important;
-    color: #121212 !important;
+:root[data-theme] .post-wrapper {
+    background-color: var(--post-bg);
+    color: var(--text-color);
 }
 
-[data-theme="light"] .gh-head {
-    background-color: #ffffff !important;
-}
-
-[data-theme="light"] .gh-head-menu a,
-[data-theme="light"] .gh-head-link,
-[data-theme="light"] .gh-secondary-menu a {
-    color: #121212 !important;
-}
-
-[data-theme="light"] .post-wrapper {
-    background-color: #f4f4f4 !important;
-    color: #121212 !important;
-}
-
-[data-theme="light"] .gh-head-secondary {
-    background-color: #ffffff !important;
-    border-color: #f4f4f4 !important;
+:root[data-theme] .gh-head-secondary {
+    background-color: var(--secondary-bg);
+    border-color: var(--border-color);
 }
