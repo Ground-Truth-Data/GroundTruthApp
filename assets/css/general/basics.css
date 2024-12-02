@@ -1,34 +1,29 @@
 :root {
-  --bg-text-biColor: #ffffff !important;
-  --card-biColour: #f4f4f4 !important;
+  --background-color: #ffffff;
+  --text-color: #121212;
+  --card-color: #f4f4f4;
   --primary-color: var(--ghost-accent-color, #2ec4b6);
-  --primary-text-color: var(--bg-text-biColor);
-  --secondary-text-color: var(--card-biColour);
-  --white-color: var(--bg-text-biColor);
-  --light-gray-color: var(--card-biColour);
-  --mid-gray-color: var(--card-biColour);
-  --dark-gray-color: var(--bg-text-biColor);
-  --black-color: var(--bg-text-biColor);
   --font-sans: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
     Helvetica, Arial, sans-serif;
   --font-serif: Lora, Times, serif;
   --animation-base: ease-in-out;
+  --transition-speed: 0.3s;
   --shadow-base: 0 0 10px rgba(0, 0, 0, 0.02);
   --content-font-size: 1.7rem;
 }
 
 [data-theme="dark"] {
-  --bg-text-biColor: #121212 !important;
-  --card-biColour: #212121 !important;
-}
-
-[data-theme="light"] {
-  --bg-text-biColor: #ffffff !important;
-  --card-biColour: #f4f4f4 !important;
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #212121;
 }
 
 body:not(.post-template):not(.page-template) {
-  background-image: linear-gradient(0deg, #efefef 65%, #fff);
+  background-image: linear-gradient(
+    0deg,
+    var(--card-color) 65%,
+    var(--background-color)
+  );
 }
 
 [data-theme="dark"] body:not(.post-template):not(.page-template) {
@@ -36,6 +31,25 @@ body:not(.post-template):not(.page-template) {
 }
 
 body {
-  background-color: var(--bg-text-biColor);
-  color: var(--card-biColour);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.gh-head {
+  background-color: var(--background-color);
+}
+
+.gh-head-menu a,
+.gh-head-link,
+.gh-secondary-menu a {
+  color: var(--text-color);
+}
+
+.post-wrapper {
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
+.gh-head-secondary {
+  background-color: var(--background-color);
+  border-color: var(--card-color);
 }

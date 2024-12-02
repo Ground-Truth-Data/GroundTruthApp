@@ -5,6 +5,7 @@
 @import "site/header.css";
 @import "site/layout.css";
 @import "site/term.css";
+@import "site/mobile-menu.css";
 @import "blog/post.css";
 @import "blog/featured.css";
 @import "blog/article.css";
@@ -14,47 +15,4 @@
 @import "blog/related.css";
 @import "misc/utilities.css";
 
-/* Theme styles - Using more specific selectors */
-:root[data-theme="dark"] {
-    --background-color: #121212;
-    --text-color: #ffffff;
-    --header-bg: #121212;
-    --post-bg: #212121;
-    --secondary-bg: #121212;
-    --border-color: #212121;
-}
-
-:root[data-theme="light"] {
-    --background-color: #ffffff;
-    --text-color: #121212;
-    --header-bg: #ffffff;
-    --post-bg: #f4f4f4;
-    --secondary-bg: #ffffff;
-    --border-color: #f4f4f4;
-}
-
-/* Apply theme variables */
-:root[data-theme] body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-:root[data-theme] .gh-head {
-    background-color: var(--header-bg);
-}
-
-:root[data-theme] .gh-head-menu a,
-:root[data-theme] .gh-head-link,
-:root[data-theme] .gh-secondary-menu a {
-    color: var(--text-color);
-}
-
-:root[data-theme] .post-wrapper {
-    background-color: var(--post-bg);
-    color: var(--text-color);
-}
-
-:root[data-theme] .gh-head-secondary {
-    background-color: var(--secondary-bg);
-    border-color: var(--border-color);
-}
+/* Theme styles moved to basics.css */
