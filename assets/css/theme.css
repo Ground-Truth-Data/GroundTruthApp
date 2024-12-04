@@ -119,6 +119,12 @@ a[href^="/contact"]:hover,
 }
 
 /* Hamburger menu color */
+.custom-nav-btn {
+  margin-left: 16px;
+}
+
 .custom-nav-btn svg {
   fill: var(--hamburger-color);
+  width: 32px;
+  height: 32px;
 }

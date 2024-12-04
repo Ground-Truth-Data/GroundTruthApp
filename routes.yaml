@@ -15,6 +15,7 @@ collections:
       - index
     order: featured desc, published_at desc
     filter: tag:-wiki # Exclude wiki posts from the main collection
+
 /wiki/:
   permalink: /wiki/{slug}/
   template:
