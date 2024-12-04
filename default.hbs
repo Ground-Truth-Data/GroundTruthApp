@@ -38,7 +38,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
                 <button id="theme-toggle-mobile" class="gh-icon-btn" aria-label="Toggle Theme">🌓</button>
-                <a href="/mobile-menu" class="custom-nav-btn gh-icon-btn" aria-label="Menu">
+                <a href="/mobile-menu/" class="custom-nav-btn gh-icon-btn" aria-label="Menu">
                     <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
                     </svg>
@@ -205,6 +205,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
     });
 </script>
+
+<div id="mobile-menu-overlay" class="mobile-menu-overlay">
+    <div class="mobile-menu-content">
+        <button id="mobile-menu-close" class="mobile-menu-close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+        </button>
+        <nav class="mobile-menu-nav">
+            {{navigation}}
+            
+            {{#if @site.secondary_navigation}}
+                <div class="mobile-menu-secondary">
+                    {{navigation type="secondary"}}
+                </div>
+            {{/if}}
+            
+            <div class="mobile-menu-members">
+                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
+                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe</a>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const menuClose = document.getElementById('mobile-menu-close');
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            menuOverlay.classList.add('is-active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', function() {
+            menuOverlay.classList.remove('is-active');
+            document.body.style.overflow = '';
+        });
+    });
+</script>
+
+<style>
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--background);
+        z-index: 9999;
+        display: none;
+        overflow-y: auto;
+    }
+
+    .mobile-menu-overlay.is-active {
+        display: block;
+    }
+
+    .mobile-menu-content {
+        padding: 24px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .mobile-menu-close {
+        background: none;
+        border: none;
+        color: var(--color-base);
+        padding: 8px;
+        margin-bottom: 24px;
+        cursor: pointer;
+    }
+</style>
 
 {{ghost_foot}}
 
