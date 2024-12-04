@@ -4,10 +4,22 @@ routes:
     content_type: text/html
     data: false
 
+  /wiki/:
+    controller: channel
+    filter: tag:wiki
+
 collections:
   /:
     permalink: /{slug}/
-    template: index19791984#2partA
+    template:
+      - index
+    order: featured desc, published_at desc
+    filter: tag:-wiki # Exclude wiki posts from the main collection
+/wiki/:
+  permalink: /wiki/{slug}/
+  template:
+    - wiki
+  filter: tag:wiki
 
 taxonomies:
   tag: /tag/{slug}/
