@@ -114,8 +114,10 @@ a[href^="/author/"]:hover,
 a[href^="/contact"]:hover,
 .gh-head-menu a:hover,
 .gh-head-link:hover,
-.nav a:hover {
+.nav a:hover,
+.gh-head-menu .nav li a:hover {
   color: var(--brand-purple) !important;
+  text-decoration: none;
 }
 
 /* Hamburger menu color */
