@@ -54,18 +54,18 @@
       "title_font": {
         "type": "select",
         "options": [
-          "Modern sans-serif",
-          "Elegant serif"
+          "Inter",
+          "Roboto"
         ],
-        "default": "Modern sans-serif"
+        "default": "Inter"
       },
       "body_font": {
         "type": "select",
         "options": [
-          "Modern sans-serif",
-          "Elegant serif"
+          "Inter",
+          "Roboto"
         ],
-        "default": "Modern sans-serif"
+        "default": "Inter"
       },
       "show_related_posts": {
         "type": "boolean",
@@ -74,7 +74,10 @@
       },
       "color_scheme": {
         "type": "select",
-        "options": ["Light", "Dark"],
+        "options": [
+          "Light",
+          "Dark"
+        ],
         "default": "Light"
       }
     }

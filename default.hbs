@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} data-theme="dark"{{/match}}>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} data-theme="dark"{{/match}} class="font-{{@custom.title_font}}">
 
 <head>
     <script>
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
     <link rel="stylesheet" href="{{asset "css/theme.css"}}">
     <script src="{{asset "js/theme.min.js"}}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     {{ghost_head}}
 </head>
