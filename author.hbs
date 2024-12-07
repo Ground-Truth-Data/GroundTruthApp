@@ -3,12 +3,12 @@
 <div class="gh-container">
     {{#author}}
         <div class="gh-author-header">
-            <img class="gh-author-image" src="http://localhost:2368/content/images/2024/12/2024-12-05-Stewart-selfie-minified-1.png" alt="Stewart Mior">
-            <h1 class="gh-author-name">Stewart Mior</h1>
-            <div class="gh-author-bio">I love planting trees, helping other people plant trees, and spreading knowledge about planting trees ✌️ 🌴</div>
+            <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}">
+            <h1 class="gh-author-name">{{name}}</h1>
+            <div class="gh-author-bio">{{bio}}</div>
             <div class="gh-author-links">
-                <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">Website</a>
-                <a href="https://x.com/yourprofile" target="_blank" rel="noopener noreferrer">X (formerly Twitter) profile</a>
+                {{#if website}}<a href="{{website}}">Website</a>{{/if}}
+                {{#if twitter}}<a href="{{twitter_url}}">Twitter</a>{{/if}}
             </div>
         </div>
     {{/author}}

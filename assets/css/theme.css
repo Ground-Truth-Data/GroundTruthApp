@@ -191,6 +191,8 @@ h6,
 .gh-author-header {
   margin: 0 0 6rem;
   padding: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .gh-author-image {
@@ -234,4 +236,10 @@ h6,
 
 .gh-author-links a:hover {
     text-decoration: underline;
+}
+
+.post-media img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
