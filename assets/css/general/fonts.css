@@ -53,3 +53,7 @@
     font-weight: 700;
     src: local("Roboto"), url("../fonts/roboto-bold.woff2") format("woff2"), url("../fonts/roboto-bold.woff") format("woff");
 }
+
+body {
+    font-family: {{@custom.body_font}}, sans-serif;
+}

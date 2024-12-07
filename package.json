@@ -55,15 +55,8 @@
         "type": "select",
         "options": [
           "Inter",
-          "Roboto"
-        ],
-        "default": "Inter"
-      },
-      "body_font": {
-        "type": "select",
-        "options": [
-          "Inter",
-          "Roboto"
+          "Roboto",
+          "Sans serif"
         ],
         "default": "Inter"
       },
