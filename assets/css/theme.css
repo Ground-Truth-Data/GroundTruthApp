@@ -70,7 +70,9 @@ h6,
   color: var(--nav-text-color) !important;
   font-family: var(--font-title);
 }
-
+.post-image[src*="Great-hero-Image-1.jpg"] {
+  display: none;
+}
 /* Posts */
 .post-wrapper {
   background-color: var(--card-color);
