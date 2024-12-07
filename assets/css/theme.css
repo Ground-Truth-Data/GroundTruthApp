@@ -235,7 +235,3 @@ h6,
 .gh-author-links a:hover {
     text-decoration: underline;
 }
-
-.post-image[src*="Great-hero-Image-1.jpg"] {
-    display: none;
-}
