@@ -100,13 +100,13 @@ h6,
 
 /* Tag links - Brand purple */
 .gh-article-tag {
-  color: var(--brand-purple) !important;
+  color: var(--brand-purple) 
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .gh-article-tag:hover {
-  color: var(--brand-purple-light) !important;
+  color: var(--brand-purple-light) 
 }
 
 /* Author and nav links - Dark/Light with purple hover */
@@ -115,7 +115,7 @@ a[href^="/contact"],
 .gh-head-menu a,
 .gh-head-link,
 .nav a {
-  color: var(--text-color) !important;
+  color: var(--text-color) 
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -126,7 +126,7 @@ a[href^="/contact"]:hover,
 .gh-head-link:hover,
 .nav a:hover,
 .gh-head-menu .nav li a:hover {
-  color: var(--brand-purple) !important;
+  color: var(--brand-purple) 
   text-decoration: none;
 }
 
@@ -176,14 +176,62 @@ h6,
 }
 
 .gh-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 4vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 4vw 4vw;
 }
 
 .gh-feed {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 3rem;
-    padding: 4vw 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 4vw 0;
+}
+
+.gh-author-header {
+  margin: 0 0 6rem;
+  padding: 2rem;
+}
+
+.gh-author-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.gh-author-name {
+  text-align: left;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gh-author-bio {
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gh-author-links {
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+.gh-author-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.gh-author-links a:hover {
+    text-decoration: underline;
 }

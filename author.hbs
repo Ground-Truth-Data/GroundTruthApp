@@ -1,19 +1,26 @@
 {{!< default}}
 
 <div class="gh-container">
-    <div style="text-align: center; margin: 4rem 0;">
-        <img src="your-image-url.jpg" alt="Stewart" style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 2rem;">
-        <h1 style="margin-bottom: 1rem;">Stewart Mior</h1>
-        <p style="max-width: 800px; margin: 0 auto;">
-            <!-- Paste your bio text here -->
-            I love planting trees, helping other people plant trees, and spreading knowledge about planting trees ✌️ 🌴
-        </p>
-        <!-- Add any other content you want -->
-    </div>
+    {{#author}}
+        <div class="gh-author-header">
+            <img class="gh-author-image" src="http://localhost:2368/content/images/2024/12/2024-12-05-Stewart-selfie-minified-1.png" alt="Stewart Mior">
+            <h1 class="gh-author-name">Stewart Mior</h1>
+            <div class="gh-author-bio">I love planting trees, helping other people plant trees, and spreading knowledge about planting trees ✌️ 🌴</div>
+            <div class="gh-author-links">
+                <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">Website</a>
+                <a href="https://x.com/yourprofile" target="_blank" rel="noopener noreferrer">X (formerly Twitter) profile</a>
+            </div>
+        </div>
+    {{/author}}
     
     <div class="gh-feed">
         {{#foreach posts}}
             {{> "loop"}}
         {{/foreach}}
+    </div>
+
+    <div class="gh-author-social">
+        {{#if website}}<a href="{{website}}">Linkedin</a>{{/if}}
+        {{#if twitter}}<a href="{{twitter_url}}">X (formerly Twitter)</a>{{/if}}
     </div>
 </div>
