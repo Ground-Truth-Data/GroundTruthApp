@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
     <link rel="stylesheet" href="{{asset "css/theme.css"}}">
     <script src="{{asset "js/theme.min.js"}}"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     {{ghost_head}}
 </head>
 
-<body class="{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}">
+<body class="{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Inter"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Inter"}} has-serif-body{{/match}}">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3H973S4"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -143,7 +143,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
         <div class="gh-policy-links">
             <a href="https://groundtruth.app/content-policy/" target="_blank" rel="nofollow noreferrer noopener">Content Policy</a> |
-            <a href="https://groundtruth.app/privacy-policy/" target="_blank" rel="nofollow noreferrer noopener">Privacy Policy</a>
+            <a href="https://groundtruth.app/privacy-policy/" target="_blank" rel="nofollow noreferrer noopener">Privacy Policy</a> |
+            <a href="https://groundtruth.app/editorial-policy/" target="_blank" rel="nofollow noreferrer noopener">Editorial Policy</a> 
         </div>
 
        
