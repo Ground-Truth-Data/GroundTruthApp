@@ -11,8 +11,10 @@
   --brand-purple: #8028de;
   --brand-purple-light: #9447ff;
   --hamburger-color: var(--text-color);
-  --font-title: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  --font-title: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
 }
 
 /* Dark mode */
@@ -28,8 +30,10 @@
   --brand-purple: #8028de;
   --brand-purple-light: #9447ff;
   --hamburger-color: var(--text-color);
-  --font-title: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  --font-title: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
 }
 
 /* Apply variables */
@@ -139,13 +143,17 @@ a[href^="/contact"]:hover,
 
 /* Font classes */
 .font-Inter {
-  --font-title: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  --font-title: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
 }
 
 .font-Roboto {
-  --font-title: 'Roboto', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  --font-title: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+  --font-body: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
 }
 
 /* Apply fonts globally */
@@ -156,8 +164,26 @@ body {
 /* Apply title font to headings and specific elements */
 .gh-head-logo,
 .site-title,
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .gh-article-title,
 .post-title {
   font-family: var(--font-title);
+}
+
+.gh-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4vw;
+}
+
+.gh-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 4vw 0;
 }

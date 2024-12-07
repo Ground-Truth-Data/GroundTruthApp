@@ -1,0 +1,19 @@
+{{!< default}}
+
+<div class="gh-container">
+    <div style="text-align: center; margin: 4rem 0;">
+        <img src="your-image-url.jpg" alt="Stewart" style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 2rem;">
+        <h1 style="margin-bottom: 1rem;">Stewart Mior</h1>
+        <p style="max-width: 800px; margin: 0 auto;">
+            <!-- Paste your bio text here -->
+            I love planting trees, helping other people plant trees, and spreading knowledge about planting trees ✌️ 🌴
+        </p>
+        <!-- Add any other content you want -->
+    </div>
+    
+    <div class="gh-feed">
+        {{#foreach posts}}
+            {{> "loop"}}
+        {{/foreach}}
+    </div>
+</div>
