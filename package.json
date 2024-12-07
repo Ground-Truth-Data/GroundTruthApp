@@ -55,9 +55,7 @@
         "type": "select",
         "options": [
           "Inter",
-          "Roboto",
-          "Sans serif"
-
+          "Roboto"
         ],
         "default": "Inter"
       },
@@ -65,9 +63,7 @@
         "type": "select",
         "options": [
           "Inter",
-          "Roboto",
-          "Sans serif"
-
+          "Roboto"
         ],
         "default": "Inter"
       },
