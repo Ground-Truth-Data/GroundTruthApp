@@ -248,3 +248,12 @@ h6,
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+figcaption a {
+  color: var(--link-color) !important;
+  text-decoration: none;
+}
+
+figcaption a:hover {
+  text-decoration: underline;
+}
