@@ -4,7 +4,7 @@
   --text-color: #121212;
   --card-color: #f4f4f4;
   --header-color: var(--bg-color);
-  --link-color: #0066cc;
+  --link-color: #8028DE;
   --heading-color: var(--text-color);
   --nav-text-color: var(--text-color);
   --footer-color: var(--card-color);
@@ -23,7 +23,7 @@
   --text-color: #ffffff;
   --card-color: #212121;
   --header-color: var(--bg-color);
-  --link-color: #66b3ff;
+  --link-color: #8028DE;
   --heading-color: var(--text-color);
   --nav-text-color: var(--text-color);
   --footer-color: var(--card-color);
