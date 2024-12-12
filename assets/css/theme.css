@@ -128,7 +128,7 @@ a[href^="/contact"]:hover,
 .gh-head-link:hover,
 .nav a:hover,
 .gh-head-menu .nav li a:hover {
-  color: var(--brand-purple) 
+  color: var(--brand-purple);
   text-decoration: none;
 }
 
@@ -164,16 +164,7 @@ body {
 }
 
 /* Apply title font to headings and specific elements */
-.gh-head-logo,
-.site-title,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.gh-article-title,
-.post-title {
+:where(.gh-head-logo, .site-title, h1, h2, h3, h4, h5, h6, .gh-article-title, .post-title) {
   font-family: var(--font-title);
 }
 
@@ -185,7 +176,7 @@ h6,
 
 .gh-feed {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
   gap: 3rem;
   padding: 4vw 0;
 }
@@ -240,9 +231,9 @@ h6,
 
 .visually-hidden {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    margin: -0.0625rem;
     padding: 0;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
@@ -259,17 +250,7 @@ figcaption a:focus {
     text-decoration: underline;
 }
 
-/* These author-related classes share many properties */
-.gh-author-name,
-.gh-author-bio,
-.gh-author-links {
-    text-align: left;
-    max-width: 800px;  /* Could be 50rem */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Could be simplified to: */
+/* Keep this simplified version */
 .gh-author-content {
     text-align: left;
     max-width: 50rem;
@@ -277,7 +258,6 @@ figcaption a:focus {
     margin-right: auto;
 }
 
-/* Then add specific properties */
 .gh-author-links {
     margin-top: 1rem;
 }
