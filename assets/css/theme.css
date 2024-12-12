@@ -134,28 +134,28 @@ a[href^="/contact"]:hover,
 
 /* Hamburger menu color */
 .custom-nav-btn {
-  margin-left: 16px;
+  margin-left: 1rem;
 }
 
 .custom-nav-btn svg {
   fill: var(--hamburger-color);
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
 }
 
 /* Font classes */
+:root {
+  --system-fonts: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+}
+
 .font-Inter {
-  --font-title: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-    Arial, sans-serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-    Arial, sans-serif;
+  --font-title: "Inter", var(--system-fonts);
+  --font-body: "Inter", var(--system-fonts);
 }
 
 .font-Roboto {
-  --font-title: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-    Arial, sans-serif;
-  --font-body: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-    Arial, sans-serif;
+  --font-title: "Roboto", var(--system-fonts);
+  --font-body: "Roboto", var(--system-fonts);
 }
 
 /* Apply fonts globally */
@@ -178,7 +178,7 @@ h6,
 }
 
 .gh-container {
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
   padding: 8rem 4vw 4vw;
 }
@@ -196,8 +196,8 @@ h6,
 }
 
 .gh-author-image {
-  width: 200px;
-  height: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 2rem;
@@ -254,6 +254,30 @@ figcaption a {
   text-decoration: none;
 }
 
-figcaption a:hover {
-  text-decoration: underline;
+figcaption a:hover,
+figcaption a:focus {
+    text-decoration: underline;
+}
+
+/* These author-related classes share many properties */
+.gh-author-name,
+.gh-author-bio,
+.gh-author-links {
+    text-align: left;
+    max-width: 800px;  /* Could be 50rem */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Could be simplified to: */
+.gh-author-content {
+    text-align: left;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Then add specific properties */
+.gh-author-links {
+    margin-top: 1rem;
 }
