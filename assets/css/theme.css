@@ -4,13 +4,17 @@
   --text-color: #121212;
   --card-color: #f4f4f4;
   --header-color: var(--bg-color);
-  --link-color: #0066cc;
+  --link-color: #8028DE;
   --heading-color: var(--text-color);
   --nav-text-color: var(--text-color);
   --footer-color: var(--card-color);
   --brand-purple: #8028de;
   --brand-purple-light: #9447ff;
   --hamburger-color: var(--text-color);
+  --font-title: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+  --font-body: {{@custom.body_font}}, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
 }
 
 /* Dark mode */
@@ -19,13 +23,17 @@
   --text-color: #ffffff;
   --card-color: #212121;
   --header-color: var(--bg-color);
-  --link-color: #66b3ff;
+  --link-color: #8028DE;
   --heading-color: var(--text-color);
   --nav-text-color: var(--text-color);
   --footer-color: var(--card-color);
   --brand-purple: #8028de;
   --brand-purple-light: #9447ff;
   --hamburger-color: var(--text-color);
+  --font-title: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+  --font-body: {{@custom.body_font}}, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
 }
 
 /* Apply variables */
@@ -35,6 +43,7 @@ body:not(.post-template):not(.page-template) {
   background-color: var(--bg-color) !important;
   color: var(--text-color);
   background-image: none !important;
+  font-family: var(--font-body);
 }
 
 /* Navigation - with !important to override */
@@ -59,8 +68,11 @@ h6,
 .gh-article-title,
 .post-title {
   color: var(--nav-text-color) !important;
+  font-family: var(--font-title);
 }
-
+.post-image[src*="Great-hero-Image-1.jpg"] {
+  display: none;
+}
 /* Posts */
 .post-wrapper {
   background-color: var(--card-color);
@@ -90,13 +102,13 @@ h6,
 
 /* Tag links - Brand purple */
 .gh-article-tag {
-  color: var(--brand-purple) !important;
+  color: var(--brand-purple) 
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .gh-article-tag:hover {
-  color: var(--brand-purple-light) !important;
+  color: var(--brand-purple-light) 
 }
 
 /* Author and nav links - Dark/Light with purple hover */
@@ -105,7 +117,7 @@ a[href^="/contact"],
 .gh-head-menu a,
 .gh-head-link,
 .nav a {
-  color: var(--text-color) !important;
+  color: var(--text-color) 
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -114,11 +126,138 @@ a[href^="/author/"]:hover,
 a[href^="/contact"]:hover,
 .gh-head-menu a:hover,
 .gh-head-link:hover,
-.nav a:hover {
-  color: var(--brand-purple) !important;
+.nav a:hover,
+.gh-head-menu .nav li a:hover {
+  color: var(--brand-purple);
+  text-decoration: none;
 }
 
 /* Hamburger menu color */
+.custom-nav-btn {
+  margin-left: 1rem;
+}
+
 .custom-nav-btn svg {
   fill: var(--hamburger-color);
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Font classes */
+:root {
+  --system-fonts: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+}
+
+.font-Inter {
+  --font-title: "Inter", var(--system-fonts);
+  --font-body: "Inter", var(--system-fonts);
+}
+
+.font-Roboto {
+  --font-title: "Roboto", var(--system-fonts);
+  --font-body: "Roboto", var(--system-fonts);
+}
+
+/* Apply fonts globally */
+body {
+  font-family: var(--font-body);
+}
+
+/* Apply title font to headings and specific elements */
+:where(.gh-head-logo, .site-title, h1, h2, h3, h4, h5, h6, .gh-article-title, .post-title) {
+  font-family: var(--font-title);
+}
+
+.gh-container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 8rem 4vw 4vw;
+}
+
+.gh-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+  gap: 3rem;
+  padding: 4vw 0;
+}
+
+.gh-author-header {
+  margin: 0 0 6rem;
+  padding: 2rem;
+}
+
+.gh-author-image {
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.gh-author-name {
+  text-align: left;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gh-author-bio {
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gh-author-links {
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+.gh-author-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.gh-author-links a:hover {
+    text-decoration: underline;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    margin: -0.0625rem;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+figcaption a {
+  color: var(--link-color) !important;
+  text-decoration: none;
+}
+
+figcaption a:hover,
+figcaption a:focus {
+    text-decoration: underline;
+}
+
+/* Keep this simplified version */
+.gh-author-content {
+    text-align: left;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gh-author-links {
+    margin-top: 1rem;
 }

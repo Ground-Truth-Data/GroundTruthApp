@@ -1,0 +1,27 @@
+{{!< default}}
+
+<div class="gh-container">
+    {{#author}}
+        <div class="gh-author-header">
+            <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}">
+            <h1 class="gh-author-name">{{name}}</h1>
+            <div class="gh-author-bio">{{bio}}</div>
+            <div class="gh-author-links">
+                {{#if website}}<a href="{{website}}">Linkedin</a>{{/if}}
+                {{#if twitter}}<a href="{{twitter_url}}">Twitter</a>{{/if}}
+            </div>
+        </div>
+    {{/author}}
+    
+    
+    <div class="gh-feed">
+        {{#foreach posts}}
+            {{> "loop"}}
+        {{/foreach}}
+    </div>
+
+    <div class="gh-author-social">
+        {{#if website}}<a href="{{website}}">Linkedin</a>{{/if}}
+        {{#if twitter}}<a href="{{twitter_url}}">X (formerly Twitter)</a>{{/if}}
+    </div>
+</div>
