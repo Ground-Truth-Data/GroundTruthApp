@@ -285,3 +285,21 @@ figcaption a:focus {
   display: flex;
   flex-direction: column;
 }
+
+/* Add this to your existing link styles */
+.gh-head-logo a:hover,
+.gh-head-logo a {
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+/* Add this near the top of your theme.css, after the root variables */
+.gh-head .gh-head-brand .gh-head-logo a,
+.gh-head .gh-head-brand .gh-head-logo a:hover,
+.gh-head-logo a,
+.gh-head-logo a:hover,
+a.gh-head-logo,
+a.gh-head-logo:hover {
+    opacity: 1 !important;
+    transition: none !important;
+}
