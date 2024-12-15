@@ -21,7 +21,7 @@
 :root[data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #ffffff;
-  --card-color: #212121;
+  --card-color: #121212;
   --header-color: var(--bg-color);
   --link-color: #8028DE;
   --heading-color: var(--text-color);
@@ -118,7 +118,7 @@ a[href^="/contact"],
 .gh-head-menu a,
 .gh-head-link,
 .nav a {
-  color: var(--text-color) 
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -280,7 +280,7 @@ figcaption a:focus {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  background-color: var(--card-color) !important
+  background-color: var(--card-color) !important;
   border-radius: 0.4rem;
   transition: transform 0.3s ease;
   overflow: hidden;
@@ -309,4 +309,12 @@ a.gh-head-logo,
 a.gh-head-logo:hover {
     opacity: 1 !important;
     transition: none !important;
+}
+
+/* Add this near your other component styles */
+.related-wrapper {
+    background-color: var(--bg-color);  /* This will be #121212 in dark mode */
+    margin-top: 96px;
+    padding-bottom: 64px;
+    padding-top: 48px;
 }
