@@ -366,3 +366,20 @@ a.gh-head-logo:hover {
     color: var(--brand-purple) !important;
     opacity: 1 !important;
 }
+
+/* Update site-content padding */
+.site-content {
+    flex-grow: 1;
+    padding-bottom: 15;  /* Reduced from 30px */
+    padding-top: 15;     /* Reduced from 30px */
+}
+
+/* Adjust article spacing if needed */
+.gh-article {
+    margin-top: 0;
+}
+
+/* If you need some minimal spacing between header and content */
+.gh-article-header {
+    padding-top: 1rem;
+}
