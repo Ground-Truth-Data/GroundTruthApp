@@ -127,7 +127,13 @@ a[href^="/author/"]:hover,
 a[href^="/contact"]:hover,
 .gh-head-menu a:hover,
 .gh-head-link:hover,
-.nav a:hover,
+/* Navigation hover styles */
+.nav[role="menu"] li a:hover {
+  color: #8028DE !important;
+  text-decoration: none;
+}
+
+
 .gh-head-menu .nav li a:hover {
   color: var(--brand-purple);
   text-decoration: none;
