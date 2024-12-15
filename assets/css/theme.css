@@ -150,6 +150,11 @@ a[href^="/contact"]:hover,
   height: 2rem;
 }
 
+/* Add these new styles for the hamburger icon */
+.custom-nav-btn svg path {
+  fill: var(--text-color); /* This will be black in light mode, white in dark mode */
+}
+
 /* Font classes */
 :root {
   --system-fonts: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
