@@ -64,7 +64,8 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6, 
+
 .gh-article-title,
 .post-title {
   color: var(--nav-text-color) !important;
@@ -102,13 +103,13 @@ h6,
 
 /* Tag links - Brand purple */
 .gh-article-tag {
-  color: var(--brand-purple) 
+  color: var(--brand-purple);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .gh-article-tag:hover {
-  color: var(--brand-purple-light) 
+  color: var(--brand-purple-light);
 }
 
 /* Author and nav links - Dark/Light with purple hover */
@@ -273,7 +274,7 @@ figcaption a:focus {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  background-color: var(--card-color);
+  background-color: var(--card-color) !important
   border-radius: 0.4rem;
   transition: transform 0.3s ease;
   overflow: hidden;
