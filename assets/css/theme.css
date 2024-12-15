@@ -323,3 +323,31 @@ a.gh-head-logo:hover {
     padding-bottom: 64px;
     padding-top: 48px;
 }
+
+/* Footer link styles with high specificity */
+.gh-foot a,
+.gh-foot .gh-policy-links a {
+    color: var(--text-color) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.gh-foot a:hover,
+.gh-foot .gh-policy-links a:hover {
+    color: var(--brand-purple) !important;
+    opacity: 1 !important;
+    text-decoration: none;
+}
+
+/* Override any other footer link styles */
+.gh-foot-inner a,
+.gh-foot-inner .gh-policy-links a {
+    color: var(--text-color) !important;
+    transition: color 0.3s ease;
+}
+
+.gh-foot-inner a:hover,
+.gh-foot-inner .gh-policy-links a:hover {
+    color: var(--brand-purple) !important;
+    opacity: 1 !important;
+}
