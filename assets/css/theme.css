@@ -194,6 +194,21 @@ body {
   margin: 0 auto;
 }
 
+/* Add/update media queries */
+@media (max-width: 767px) {
+  .gh-feed {
+    grid-template-columns: 1fr ; /* Force single column */
+    gap: 2rem;
+    padding: 2vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .gh-feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .gh-author-header {
   margin: 0 0 6rem;
   padding: 2rem;
