@@ -288,6 +288,48 @@
     }
 </style>
 
+<script>
+function updateRelativeTimes() {
+    const timeElements = document.querySelectorAll('.relative-time');
+    
+    timeElements.forEach(element => {
+        const publishedTimestamp = parseInt(element.dataset.published) * 1000; // Convert to milliseconds
+        const now = new Date().getTime();
+        const diffHours = Math.floor((now - publishedTimestamp) / (1000 * 60 * 60));
+        
+        if (diffHours < 24) {
+            // Less than 24 hours
+            const hours = diffHours === 0 ? 1 : diffHours;
+            element.textContent = `${hours} hour${hours === 1 ? '' : 's'} ago`;
+        } else if (diffHours < 48) {
+            // Between 24-48 hours
+            element.textContent = '1 day ago';
+        } else if (diffHours < 72) {
+            // Between 48-72 hours
+            element.textContent = '2 days ago';
+        } else if (diffHours < 96) {
+            // Between 72-96 hours
+            element.textContent = '3 days ago';
+        } else {
+            // More than 96 hours - keep original date format
+            const date = new Date(publishedTimestamp);
+            element.textContent = date.toLocaleDateString('en-GB', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric'
+            });
+        }
+    });
+}
+
+// Update times when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    updateRelativeTimes();
+    // Update every minute to keep times current
+    setInterval(updateRelativeTimes, 60000);
+});
+</script>
+
 {{ghost_foot}}
 
 </body>

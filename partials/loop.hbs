@@ -49,8 +49,11 @@
   
   <footer class="post-footer">
     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-        {{!-- <span class="post-more" style="margin: 0;">Read More</span> --}}
-        <time class="gh-article-meta" datetime="{{date published_at format="YYYY-MM-DD"}}" style="margin: 0;">{{date published_at format="DD MMM YYYY"}}</time>
+        <time class="gh-article-meta relative-time" 
+              datetime="{{date published_at format="YYYY-MM-DD"}}" 
+              data-published="{{date published_at format="X"}}">
+            {{date published_at format="DD MMM YYYY"}}
+        </time>
     </div>
         {{!-- <div class="post-author">
             {{#foreach authors}}
