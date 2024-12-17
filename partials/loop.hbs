@@ -30,9 +30,15 @@
 
     <div class="post-wrapper">
         <header class="post-header">
-            {{#primary_tag}}
-                <span class="post-tag">{{name}}</span>
-            {{/primary_tag}}
+            <div class="post-tags">
+                {{#foreach tags}}
+                    {{#if visibility}}
+                        {{#if (match visibility "external")}}
+                            <span class="post-tag">{{name}}</span>
+                        {{/if}}
+                    {{/if}}
+                {{/foreach}}
+            </div>
 
             <h2 class="post-title">
                 {{title}}
