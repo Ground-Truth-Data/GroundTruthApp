@@ -68,7 +68,7 @@ h6,
 
 .gh-article-title,
 .post-title {
-  color: var(--nav-text-color) !important;
+  color: var(--nav-text-color);
   font-family: var(--font-title);
 }
 .post-image[src*="Great-hero-Image-1.jpg"] {
@@ -91,7 +91,7 @@ h6,
 .gh-content a,
 .post-content a,
 .article-content a {
-  color: var(--link-color) !important;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -129,7 +129,7 @@ a[href^="/contact"]:hover,
 .gh-head-link:hover,
 /* Navigation hover styles */
 .nav[role="menu"] li a:hover {
-  color: #8028DE !important;
+  color: var(--brand-purple);
   text-decoration: none;
 }
 
@@ -341,17 +341,18 @@ a.gh-head-logo:hover {
 
 /* Footer link styles with high specificity */
 .gh-foot a,
-.gh-foot .gh-policy-links a {
-    color: var(--text-color) !important;
+.gh-foot .gh-policy-links a,
+.gh-foot-inner a {
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .gh-foot a:hover,
-.gh-foot .gh-policy-links a:hover {
-    color: var(--brand-purple) !important;
-    opacity: 1 !important;
-    text-decoration: none;
+.gh-foot .gh-policy-links a:hover,
+.gh-foot-inner a:hover {
+    color: var(--brand-purple);
+    opacity: 1;
 }
 
 /* Override any other footer link styles */
