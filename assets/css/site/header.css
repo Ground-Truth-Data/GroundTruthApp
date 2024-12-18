@@ -23,12 +23,15 @@ header.gh-head {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  --head-padding: 2rem;
+  padding: var(--head-padding);
 }
 
 .gh-head-brand {
   display: flex;
   align-items: center;
   width: 120px;
+  transition: transform 0.3s;
 }
 
 .gh-head-brand-wrapper {
@@ -64,12 +67,14 @@ header.gh-head {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.005em;
+  transition: transform 0.3s;
 }
 
 .gh-head-actions {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: transform 0.3s;
 }
 
 .gh-icon-btn {
@@ -93,7 +98,8 @@ header.gh-head {
 
 /* Mobile styles - consolidated media queries */
 @media (max-width: 767px) {
-  .gh-head-menu {
+  .gh-head-menu,
+  .gh-head-actions {
     display: none;
   }
 
