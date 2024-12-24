@@ -21,7 +21,7 @@
 :root[data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #ffffff;
-  --card-color: #212121;
+  --card-color: #121212;
   --header-color: var(--bg-color);
   --link-color: #8028DE;
   --heading-color: var(--text-color);
@@ -383,4 +383,52 @@ a.gh-head-logo:hover {
 /* If you need some minimal spacing between header and content */
 .gh-article-header {
     padding-top: 1rem;
+}
+
+/* Post page styles - ensure all elements use post background color */
+.post-template .gh-content,
+.post-template .post,
+.post-template .post-wrapper,
+.post-template .gh-article,
+.post-template .gh-article-header,
+.post-template .gh-canvas,
+.post-template .article,
+.post-template .site-content,
+.post-template .gh-content,
+.post-template .gh-article-meta,
+.post-template .gh-article .gh-canvas,
+.post-template .gh-outer,
+.page-template .gh-content,
+.page-template .post,
+.page-template .post-wrapper,
+.page-template .gh-article,
+.page-template .gh-article-header,
+.page-template .gh-canvas,
+.page-template .article,
+.page-template .site-content,
+.page-template .gh-article-meta,
+.page-template .gh-article .gh-canvas,
+.page-template .gh-outer {
+  background-color: var(--bg-color);
+}
+
+/* Ensure article meta section uses correct background */
+.gh-article-header,
+.gh-article-meta,
+.gh-article .gh-canvas {
+  background-color: var(--bg-color);
+}
+
+/* Keep homepage cards with the card color */
+.home-template .post,
+.home-template .post-wrapper,
+.home-template .post-footer {
+  background-color: var(--card-color);
+}
+
+/* All posts and cards should use bg-color */
+.post,
+.post-wrapper,
+.post-footer {
+  background-color: var(--bg-color);
 }
