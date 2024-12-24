@@ -21,7 +21,7 @@
 :root[data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #ffffff;
-  --card-color: #121212;
+  --card-color: #212121;
   --header-color: var(--bg-color);
   --link-color: #8028DE;
   --heading-color: var(--text-color);
@@ -431,4 +431,44 @@ a.gh-head-logo:hover {
 .post-wrapper,
 .post-footer {
   background-color: var(--bg-color);
+}
+
+/* Target ONLY homepage post cards */
+.home-template .post,
+.home-template .post-wrapper,
+.home-template .post-footer {
+  background-color: var(--card-color);
+}
+
+/* Keep all other post/page elements black */
+.post-template .post,
+.post-template .post-wrapper,
+.post-template .post-footer,
+.page-template .post,
+.page-template .post-wrapper,
+.page-template .post-footer,
+.gh-content,
+.gh-article,
+.gh-article-header,
+.gh-canvas,
+.site-content {
+  background-color: var(--bg-color);
+}
+
+/* Force black background for all article and page content */
+.gh-canvas,
+.gh-article-header,
+.gh-article,
+.gh-content,
+.page-template .gh-canvas,
+.post-template .gh-canvas,
+.page .gh-canvas,
+.post .gh-canvas {
+  background-color: var(--bg-color) !important;  /* Using !important to override any other styles */
+}
+
+/* Remove any redundant background colors */
+.post-wrapper,
+.post-footer {
+  background-color: transparent;
 }
