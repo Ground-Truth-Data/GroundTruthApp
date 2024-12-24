@@ -21,7 +21,7 @@
 :root[data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #ffffff;
-  --card-color: #121212;
+  --card-color: #212121;
   --header-color: var(--bg-color);
   --link-color: #8028DE;
   --heading-color: var(--text-color);
@@ -82,7 +82,7 @@ h6,
 
 /* Card Footer */
 .post-footer {
-  background-color: var(--footer-color) !important;
+  background-color: var(--card-color) !important;
   color: var(--text-color) !important;
   border-top: 1px solid var(--text-color);
 }

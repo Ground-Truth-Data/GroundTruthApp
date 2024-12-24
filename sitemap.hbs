@@ -3,7 +3,7 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
 >
-  {{#get "posts" filter="published_at:>now-2d+tag:news" limit="1000" include="tags"}}
+  {{#get "posts" filter="published_at:>now-2d+page:false+tags:[news,spotlight,tech,interview,open-interview,tech-original,spotlight-original]" limit="1000" include="tags"}}
     {{#foreach posts}}
       <url>
         <loc>{{url absolute="true"}}</loc>
