@@ -1,14 +1,16 @@
 .navigation {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 64px;
 }
 
 .navigation-item {
+  flex: 1 1 50%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
 }
 
 .navigation-item:hover {
@@ -59,4 +61,4 @@
   .navigation-next {
     margin-top: 8px;
   }
-} 
+}
