@@ -16,6 +16,8 @@ header.gh-head {
   height: var(--header-height);
   transition: all var(--transition-speed) ease-in-out;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gh-head-inner {
