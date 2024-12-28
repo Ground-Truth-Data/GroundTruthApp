@@ -475,16 +475,30 @@ a.gh-head-logo:hover {
 
 @media (max-width: 767px) {
   .gh-social-links {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .gh-social-links a {
-    flex: 1 1 45%;
+    flex: 0 0 30%; /* Each icon takes up about one-third of the row */
     margin-bottom: 10px;
+    text-align: center;
   }
 
   .gh-foot-inner {
     text-align: center;
+    padding: 0 10px;
+  }
+
+  .gh-policy-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gh-policy-links a {
+    flex: 0 0 auto; /* Allow links to wrap naturally */
+    margin: 0 5px;
   }
 }
