@@ -477,28 +477,49 @@ a.gh-head-logo:hover {
   .gh-social-links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .gh-social-links a {
-    flex: 0 0 30%; /* Each icon takes up about one-third of the row */
+    flex: 0 0 30%;
     margin-bottom: 10px;
     text-align: center;
   }
 
   .gh-foot-inner {
-    text-align: center;
+    display: block; /* Ensure block layout for wrapping */
+    text-align: left;
     padding: 0 10px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* For older browsers */
   }
 
   .gh-policy-links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    max-width: 100%;
   }
 
   .gh-policy-links a {
-    flex: 0 0 auto; /* Allow links to wrap naturally */
+    flex: 0 0 auto;
     margin: 0 5px;
   }
+
+  .gh-copyright {
+    display: block; /* Ensure block layout for wrapping */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* For older browsers */
+    white-space: normal; /* Ensure text can wrap */
+  }
+}
+
+.copyright-wrap {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word; /* For older browsers */
+  white-space: normal; /* Ensure text can wrap */
 }
