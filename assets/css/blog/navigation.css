@@ -6,7 +6,7 @@
 }
 
 .navigation-item {
-  flex: 1 1 50%;
+  flex: 1 1 auto;
   position: relative;
   display: flex;
   flex-direction: column;

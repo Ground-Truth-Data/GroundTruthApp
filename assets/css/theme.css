@@ -472,3 +472,19 @@ a.gh-head-logo:hover {
 .post-footer {
   background-color: transparent;
 }
+
+@media (max-width: 767px) {
+  .gh-social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gh-social-links a {
+    flex: 1 1 45%;
+    margin-bottom: 10px;
+  }
+
+  .gh-foot-inner {
+    text-align: center;
+  }
+}
