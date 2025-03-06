@@ -1,0 +1,16 @@
+# This file contains redirects for your Ghost site
+# It should be placed in /content/data/redirects.yaml to take effect
+# Format documentation: https://ghost.org/docs/themes/routing/
+
+# Redirect all 404 errors to the homepage
+301:
+  # This is a catch-all redirect that will send any URL that would result in a 404 to the homepage
+  /:
+    to: /
+    permanent: true
+# You can also add specific redirects for old URLs if needed
+# Example:
+# 301:
+#   /old-url/:
+#     to: /new-url/
+#     permanent: true

@@ -16,14 +16,12 @@ collections:
     order: featured desc, published_at desc
     filter: tag:-wiki # Exclude wiki posts from the main collection
 
-/wiki/:
-  permalink: /wiki/{slug}/
-  template:
-    - wiki
-  filter: tag:wiki
+  /wiki/:
+    permalink: /wiki/{slug}/
+    template:
+      - wiki
+    filter: tag:wiki
 
 taxonomies:
   tag: /tag/{slug}/
   author: /author/{slug}/
-
-
