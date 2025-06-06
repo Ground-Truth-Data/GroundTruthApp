@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} data-theme="dark"{{/match}} class="font-{{@custom.title_font}}">
+
+<head>
+    <style>
+        /* Apply Inter or Roboto font to all elements */
+        * {
+            font-family: 'Inter', 'Roboto', sans-serif 
+        }
+    </style>
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    <link rel="stylesheet" href="{{asset "css/theme.css"}}">
+    {{!-- <link rel="canonical" href="{{canonical_url}}"> --}}
+    <script src="{{asset "js/theme.min.js"}}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}">
+
+<div class="gh-site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="{{@site.url}}">
+                        {{#if @site.logo}}
+                            <img src="{{@site.logo}}" alt="{{@site.title}}">
+                        {{else}}
+                            {{@site.title}}
+                        {{/if}}
+                    </a>
+                </div>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                <button id="theme-toggle-mobile" class="gh-icon-btn" aria-label="Toggle Theme">🌓</button>
+                <a href="/mobile-menu/" class="custom-nav-btn gh-icon-btn" aria-label="Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <nav class="gh-head-menu">
+                {{navigation}}
+                {{#if @site.secondary_navigation}}
+                    <div class="mobile-secondary-nav">
+                        <div class="gh-head-menu-separator"></div>
+                        {{navigation type="secondary"}}
+                    </div>
+                {{/if}}
+            </nav>
+
+            <div class="gh-head-actions">
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                <button id="theme-toggle" class="gh-icon-btn" aria-label="Toggle Theme">🌓</button>
+                <div class="gh-head-members">
+                    <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
+                    <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{#if @site.secondary_navigation}}
+        <div class="gh-head-secondary">
+            <div class="gh-inner">
+                <h1 class="secondary-header-text">
+                    Evidence-Based <span>Forest News</span>
+                </h1>
+                <nav class="gh-secondary-menu">
+                    {{navigation type="secondary"}}
+                </nav>
+            </div>
+        </div>
+    {{/if}}
+
+    <div class="site-content">
+        {{{body}}}
+    </div>
+
+    <footer class="gh-foot{{#unless @site.secondary_navigation}} no-menu{{/unless}} gh-outer">
+       <div class="gh-foot-inner gh-inner">
+            <div class="gh-social-links" style="display: flex; justify-content: center; gap: 10px;">
+                <a href="https://github.com/Ground-Truth-Data" target="_blank" rel="nofollow noreferrer noopener">
+                    <img src="https://groundtruth.app/content/images/2024/10/2024-10-20-Github--Icon-50X50-1.png" 
+                        width="50" height="50" loading="lazy"
+                        alt="Github icon">
+                </a>
+                <a href="https://www.facebook.com/GroundTruthData" target="_blank" rel="nofollow noreferrer noopener">
+                    <img src="https://ci3.googleusercontent.com/mail-sig/AIorK4z_0esdHusYht2SHyBrok-MwBUmo46MAS2aqFCTBSzwNVPsqVOqH6GpWUtJpuw4EQ_6Ss3Hltu7z-ml" 
+                        width="50" height="50" loading="lazy"
+                        alt="Facebook icon">
+                </a>
+                <a href="https://www.linkedin.com/company/ground-truth-forest-news" target="_blank" rel="nofollow noreferrer noopener">
+                    <img src="https://ci3.googleusercontent.com/mail-sig/AIorK4xd2QQHKvwWhE5zC1cCelFNcrnOMcjTtpIPHrxQWw87HUpWOZ8pJzdxs3Y2MIQYBDllLr9KiiixsXz_" 
+                        width="50" height="50" loading="lazy"
+                        alt="LinkedIn icon">
+                </a>
+                <a href="https://bsky.app/profile/groundtruthforests.bsky.social" target="_blank" rel="nofollow noreferrer noopener">
+                    <img src="https://groundtruth.app/content/images/2024/10/2024-10-20-15-53-1.png" 
+                        width="50" height="50" loading="lazy"
+                        alt="Bluesky icon">
+                </a>
+                <a href="https://x.com/GroundTruthApp" target="_blank" rel="nofollow noreferrer noopener">
+                    <img src="https://groundtruth.app/content/images/2024/12/2024-12-10-X-Twitter-50X50.png" 
+                        width="50" height="50" loading="lazy"
+                        alt="X (formerly Twitter) icon">
+                </a>
+                <a href="https://mastodon.social/@GroundTruthData" target="_blank" rel="nofollow noreferrer noopener">
+                    <img src="https://groundtruth.app/content/images/2024/10/2024-10-20-Mastadon--Icon-50X50.png" 
+                        width="50" height="50" loading="lazy"
+                        alt="Mastodon icon">
+                </a>
+                <a href="https://medium.com/@GroundTruthData" target="_blank" rel="nofollow noreferrer noopener">
+                    <img src="https://groundtruth.app/content/images/2024/10/2024-10-20-Medium--Icon-50X50.jpg" 
+                        width="50" height="50" loading="lazy"
+                        alt="Medium icon">
+                </a>
+                <a href="https://app.wedonthavetime.org/profile/ground_truth_forest_news" target="_blank" rel="nofollow noreferrer noopener">
+                    <img src="https://groundtruth.app/content/images/2024/10/2024-10-20-17-24.png" 
+                        width="50" height="50" loading="lazy"
+                        alt="We Don't Have Time icon">
+                </a>
+                <a href="https://ar.pinterest.com/GroundTruthForestNews/" target="_blank" rel="nofollow noreferrer noopener" style="margin: 2px;">
+                    <img src="https://groundtruth.app/content/images/2024/10/Pinterest-logo.png" 
+                        width="50" height="50" loading="lazy"
+                        alt="Pinterest icon">
+                </a>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="gh-copyright copyright-wrap">
+            © {{date format="YYYY"}} {{@site.title}}
+        </div>
+
+    
+        <div class="gh-policy-links">
+            <a href="https://groundtruth.app/content-policy/" target="_blank" rel="nofollow noreferrer noopener">Content Policy</a> |
+            <a href="https://groundtruth.app/privacy-policy/" target="_blank" rel="nofollow noreferrer noopener">Privacy Policy</a> |
+            <br>
+            <a href="https://groundtruth.app/editorial-policy/" target="_blank" rel="nofollow noreferrer noopener">Editorial Policy</a> 
+        </div>
+<br>
+       
+        <!-- Secondary Navigation if present -->
+        {{#if @site.secondary_navigation}}
+            <nav class="gh-foot-menu">
+                {{navigation type="secondary"}}
+            </nav>
+        {{/if}}
+    </div>
+</footer>
+
+</div>
+
+{{#is "post, page"}}
+    {{> "pswp"}}
+{{/is}}
+
+<script src="{{asset "built/main.min.js"}}"></script>
+<script src="{{asset "js/scroll.js"}}"></script>
+
+{{#if @site.is_development}}
+    <script>
+        // Hamburger test code here
+    </script>
+{{/if}}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        
+        function setTheme(isDark) {
+            document.body.classList.toggle('theme-dark', isDark);
+            document.body.classList.toggle('theme-light', !isDark);
+            
+            const icon = isDark ? '🌙' : '☀️';
+            if (themeToggle) themeToggle.textContent = icon;
+            if (themeToggleMobile) themeToggleMobile.textContent = icon;
+        }
+        
+        [themeToggle, themeToggleMobile].filter(button => button !== null).forEach(button => {
+            button.addEventListener('click', () => {
+                const isDark = !document.body.classList.contains('theme-dark');
+                setTheme(isDark);
+            });
+        });
+        
+        // Set initial theme
+        setTheme(false);
+
+        // Menu toggle functionality
+        const menuToggle = document.querySelector('[data-menu-toggle]');
+        const header = document.getElementById('gh-head');
+        
+        if (menuToggle && header) {
+            menuToggle.addEventListener('click', () => {
+                header.classList.toggle('is-open');
+            });
+        }
+    });
+</script>
+
+<div id="mobile-menu-overlay" class="mobile-menu-overlay">
+    <div class="mobile-menu-content">
+        <button id="mobile-menu-close" class="mobile-menu-close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+        </button>
+        <nav class="mobile-menu-nav">
+            {{navigation}}
+            
+            {{#if @site.secondary_navigation}}
+                <div class="mobile-menu-secondary">
+                    {{navigation type="secondary"}}
+                </div>
+            {{/if}}
+            
+            <div class="mobile-menu-members">
+                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
+                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe</a>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const menuClose = document.getElementById('mobile-menu-close');
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            menuOverlay.classList.add('is-active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', function() {
+            menuOverlay.classList.remove('is-active');
+            document.body.style.overflow = '';
+        });
+    });
+</script>
+
+<style>
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--background);
+        z-index: 9999;
+        display: none;
+        overflow-y: auto;
+    }
+
+    .mobile-menu-overlay.is-active {
+        display: block;
+    }
+
+    .mobile-menu-content {
+        padding: 24px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .mobile-menu-close {
+        background: none;
+        border: none;
+        color: var(--color-base);
+        padding: 8px;
+        margin-bottom: 24px;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+function updateRelativeTimes() {
+    const timeElements = document.querySelectorAll('.relative-time');
+    
+    timeElements.forEach(element => {
+        const publishedTimestamp = parseInt(element.dataset.published) * 1000; // Convert to milliseconds
+        const now = new Date().getTime();
+        const diffHours = Math.floor((now - publishedTimestamp) / (1000 * 60 * 60));
+        
+        if (diffHours < 24) {
+            // Less than 24 hours
+            const hours = diffHours === 0 ? 1 : diffHours;
+            element.textContent = `${hours} hour${hours === 1 ? '' : 's'} ago`;
+        } else if (diffHours < 48) {
+            // Between 24-48 hours
+            element.textContent = '1 day ago';
+        } else if (diffHours < 72) {
+            // Between 48-72 hours
+            element.textContent = '2 days ago';
+        } else if (diffHours < 96) {
+            // Between 72-96 hours
+            element.textContent = '3 days ago';
+        } else {
+            // More than 96 hours - keep original date format
+            const date = new Date(publishedTimestamp);
+            element.textContent = date.toLocaleDateString('en-GB', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric'
+            });
+        }
+    });
+}
+
+// Update times when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    updateRelativeTimes();
+    // Update every minute to keep times current
+    setInterval(updateRelativeTimes, 60000);
+});
+</script>
+
+{{ghost_foot}}
+
+</body>
+</html>

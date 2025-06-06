@@ -1,0 +1,20 @@
+{{#if isSecondary}}
+    {{!-- Secondary navigation template --}}
+    <ul class="nav" role="menu">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem">
+                <a href="{{url absolute="true"}}">{{label}}</a>
+            </li>
+        {{/foreach}}
+    </ul>
+    
+{{else}}
+    {{!-- Primary navigation template --}}
+    <ul class="nav" role="menu">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem">
+                <a href="{{url absolute="true"}}">{{label}}</a>
+            </li>
+        {{/foreach}}
+    </ul>
+{{/if}} 

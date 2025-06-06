@@ -1,0 +1,76 @@
+:root {
+  --header-height: 8rem;
+  --logo-max-height: 65px;
+  --icon-size: 40px;
+  --font-sans: "Inter", "Roboto", sans-serif;
+  --font-serif: "Inter", "Roboto", sans-serif;
+  --animation-base: ease-in-out;
+  --transition-speed: 0.3s;
+  --shadow-base: 0 0 10px rgba(0, 0, 0, 0.02);
+  --content-font-size: 1.7rem;
+  --menu-font-size: 1.2rem;
+  --background-color: #ffffff;
+  --bg-color: #ffffff;
+  color-scheme: light dark;
+}
+
+html {
+  background-color: var(--bg-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --card-color: #212121;
+  }
+  
+  html {
+    background-color: var(--bg-color);
+  }
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #212121;
+  background-color: var(--bg-color);
+}
+
+body:not(.post-template):not(.page-template) {
+  background-image: linear-gradient(
+    0deg,
+    var(--card-color) 65%,
+    var(--bg-color)
+  );
+}
+
+[data-theme="dark"] body:not(.post-template):not(.page-template) {
+  background-image: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.gh-head {
+  background-color: var(--bg-color);
+}
+
+.gh-head-menu a,
+.gh-head-link,
+.gh-secondary-menu a {
+  color: var(--text-color);
+}
+
+.post-wrapper {
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
+.gh-head-secondary {
+  background-color: var(--bg-color);
+  border-color: var(--card-color);
+}

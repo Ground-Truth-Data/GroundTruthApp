@@ -1,0 +1,118 @@
+/* CSS Variables for common values */
+:root {
+  --header-height: 8rem;
+  --logo-max-height: 65px;
+  --icon-size: 40px;
+  --transition-speed: 0.3s;
+  --menu-font-size: 1.2rem;
+}
+
+header.gh-head {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: var(--header-height);
+  transition: all var(--transition-speed) ease-in-out;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gh-head-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  --head-padding: 2rem;
+  padding: var(--head-padding);
+}
+
+.gh-head-brand {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  transition: transform 0.3s;
+}
+
+.gh-head-brand-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.gh-head-logo {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  margin: 0;
+  line-height: 0;
+}
+
+.gh-head-logo img {
+  max-height: var(--logo-max-height);
+  max-width: 100%;
+  height: auto;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.gh-head-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  font-size: var(--menu-font-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  transition: transform 0.3s;
+}
+
+.gh-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s;
+}
+
+.gh-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius: 50%;
+  transition: background-color var(--transition-speed);
+}
+
+/* Custom mobile menu button */
+.custom-nav-btn {
+  display: none;
+}
+
+/* Mobile styles - consolidated media queries */
+@media (max-width: 767px) {
+  .gh-head-menu,
+  .gh-head-actions {
+    display: none;
+  }
+
+  .custom-nav-btn {
+    display: inline-flex;
+  }
+
+  .gh-head.is-open .gh-head-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+  }
+}

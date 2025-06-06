@@ -1,0 +1,52 @@
+{{!< default}}
+
+<style>
+  /* Hide header and footer on mobile menu page */ .gh-head, .gh-foot,
+  .gh-head-secondary { display: none !important; } .mobile-menu-page { padding:
+  20px; max-width: 600px; margin: 0 auto; } .mobile-menu-close { background:
+  none; border: none; padding: 15px; margin-bottom: 40px; cursor: pointer;
+  font-size: 24px; align-self: flex-end; } .mobile-menu-close svg { width: 50px;
+  height: 50px; } .mobile-menu-nav { display: flex; flex-direction: column;
+  align-items: center; gap: 25px; } /* Remove bullet points */ .mobile-menu-nav
+  ul, .mobile-menu-secondary ul { list-style: none; padding: 0; margin: 0;
+  text-align: center; } .mobile-menu-page .mobile-menu-nav ul li a {
+  text-decoration: none; color: var(--color-base); font-size: 24px; padding:
+  10px; text-align: center; display: inline-block; } .mobile-menu-members {
+  margin-top: 40px; display: flex; flex-direction: column; align-items: center;
+  gap: 25px; margin-bottom: 0; padding-bottom: 0; } .mobile-menu-page
+  .mobile-menu-members .gh-head-btn { background: var(--ghost-accent-color);
+  color: #fff; padding: 15px 30px; border-radius: 25px; font-size: 20px;
+  min-width: 200px; text-align: center; text-decoration: none; display:
+  inline-block; } .mobile-menu-page .mobile-menu-members .gh-head-link {
+  font-size: 24px; color: var(--color-base); text-decoration: none; }
+</style>
+
+<div class="mobile-menu-page">
+  <button onclick="history.back()" class="mobile-menu-close">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+      />
+    </svg>
+  </button>
+
+  <nav class="mobile-menu-nav">
+    {{navigation}}
+
+    {{#if @site.secondary_navigation}}
+      <div class="mobile-menu-secondary">
+        {{navigation type="secondary"}}
+      </div>
+    {{/if}}
+
+    <div class="mobile-menu-members">
+      <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign
+        in</a>
+      <a
+        class="gh-head-btn"
+        href="#/portal/signup"
+        data-portal="signup"
+      >Subscribe</a>
+    </div>
+  </nav>
+</div>

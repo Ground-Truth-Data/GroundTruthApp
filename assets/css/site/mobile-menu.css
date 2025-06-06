@@ -1,0 +1,75 @@
+/* Mobile menu page layout */
+.mobile-menu-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 2rem;
+    overflow-y: auto;
+    z-index: 2000;
+}
+
+.mobile-menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    gap: 2rem;
+}
+
+/* Navigation links styling */
+.mobile-menu-nav a {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: opacity var(--transition-speed);
+}
+
+.mobile-menu-nav a:hover {
+    opacity: 0.8;
+}
+
+/* Secondary navigation section */
+.mobile-menu-secondary {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--card-color);
+    width: 100%;
+    text-align: center;
+}
+
+/* Close button styling */
+.mobile-menu-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2001;
+    width: 40px;
+    height: 40px;
+    transition: opacity var(--transition-speed);
+}
+
+.mobile-menu-close:hover {
+    opacity: 0.8;
+}
+
+.mobile-menu-close svg {
+    fill: var(--text-color);
+}
+
+/* Hide mobile menu above 768px */
+@media (min-width: 768px) {
+    .mobile-menu-page {
+        display: none;
+    }
+} 

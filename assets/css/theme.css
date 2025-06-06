@@ -1,0 +1,525 @@
+/* Light mode (default) */
+:root[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --card-color: #f4f4f4;
+  --header-color: var(--bg-color);
+  --link-color: #8028DE;
+  --heading-color: var(--text-color);
+  --nav-text-color: var(--text-color);
+  --footer-color: var(--card-color);
+  --brand-purple: #8028de;
+  --brand-purple-light: #9447ff;
+  --hamburger-color: var(--text-color);
+  --font-title: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+  --font-body: {{@custom.body_font}}, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+}
+
+/* Dark mode */
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #212121;
+  --header-color: var(--bg-color);
+  --link-color: #8028DE;
+  --heading-color: var(--text-color);
+  --nav-text-color: var(--text-color);
+  --footer-color: var(--card-color);
+  --brand-purple: #8028de;
+  --brand-purple-light: #9447ff;
+  --hamburger-color: var(--text-color);
+  --font-title: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+  --font-body: {{@custom.body_font}}, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+}
+
+/* Apply variables */
+body,
+.gh-site,
+body:not(.post-template):not(.page-template) {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color);
+  background-image: none !important;
+  font-family: var(--font-body);
+}
+
+/* Navigation - with !important to override */
+.gh-head,
+.gh-head-secondary {
+  background-color: var(--header-color) !important;
+}
+
+/* Force header text colors */
+.gh-head-menu a,
+.gh-head-link,
+.nav a,
+.gh-secondary-menu a,
+.secondary-header-text,
+.gh-head-menu .nav li a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, 
+
+.gh-article-title,
+.post-title {
+  color: var(--nav-text-color);
+  font-family: var(--font-title);
+}
+.post-image[src*="Great-hero-Image-1.jpg"] {
+  display: none;
+}
+/* Posts */
+.post-wrapper {
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
+/* Card Footer */
+.post-footer {
+  background-color: var(--card-color) !important;
+  color: var(--text-color) !important;
+  border-top: 1px solid var(--text-color);
+}
+
+/* Regular links styling */
+.gh-content a,
+.post-content a,
+.article-content a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.gh-content a:hover,
+.post-content a:hover,
+.article-content a:hover {
+  text-decoration: underline;
+}
+
+/* Tag links - Brand purple */
+.gh-article-tag {
+  color: var(--brand-purple);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.gh-article-tag:hover {
+  color: var(--brand-purple-light);
+}
+
+/* Author and nav links - Dark/Light with purple hover */
+a[href^="/author/"],
+a[href^="/contact"],
+.gh-head-menu a,
+.gh-head-link,
+.nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a[href^="/author/"]:hover,
+a[href^="/contact"]:hover,
+.gh-head-menu a:hover,
+.gh-head-link:hover,
+/* Navigation hover styles */
+.nav[role="menu"] li a:hover {
+  color: var(--brand-purple);
+  text-decoration: none;
+}
+
+
+.gh-head-menu .nav li a:hover {
+  color: var(--brand-purple);
+  text-decoration: none;
+}
+
+/* Hamburger menu color */
+.custom-nav-btn {
+  margin-left: 1rem;
+}
+
+.custom-nav-btn svg {
+  fill: var(--hamburger-color);
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Add these new styles for the hamburger icon */
+.custom-nav-btn svg path {
+  fill: var(--text-color); /* This will be black in light mode, white in dark mode */
+}
+
+/* Font classes */
+:root {
+  --system-fonts: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+}
+
+.font-Inter {
+  --font-title: "Inter", var(--system-fonts);
+  --font-body: "Inter", var(--system-fonts);
+}
+
+.font-Roboto {
+  --font-title: "Roboto", var(--system-fonts);
+  --font-body: "Roboto", var(--system-fonts);
+}
+
+/* Apply fonts globally */
+body {
+  font-family: var(--font-body);
+}
+
+/* Apply title font to headings and specific elements */
+:where(.gh-head-logo, .site-title, h1, h2, h3, h4, h5, h6, .gh-article-title, .post-title) {
+  font-family: var(--font-title);
+}
+
+.gh-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 4vw 4vw;
+}
+
+.gh-feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 4vw 0;
+  margin: 0 auto;
+}
+
+/* Add/update media queries */
+@media (max-width: 767px) {
+  .gh-feed {
+    grid-template-columns: 1fr ; /* Force single column */
+    gap: 2rem;
+    padding: 2vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .gh-feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gh-author-header {
+  margin: 0 0 6rem;
+  padding: 2rem;
+}
+
+.gh-author-image {
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.gh-author-name {
+  text-align: left;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gh-author-bio {
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gh-author-links {
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+.gh-author-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.gh-author-links a:hover {
+    text-decoration: underline;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    margin: -0.0625rem;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+figcaption a {
+  color: var(--link-color) !important;
+  text-decoration: none;
+}
+
+figcaption a:hover,
+figcaption a:focus {
+    text-decoration: underline;
+}
+
+/* Keep this simplified version */
+.gh-author-content {
+    text-align: left;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gh-author-links {
+    margin-top: 1rem;
+}
+
+.gh-outer {
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+/* Add styles for the post cards themselves */
+.post {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: var(--card-color) !important;
+  border-radius: 0.4rem;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.post-wrapper {
+  padding: 2.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add this to your existing link styles */
+.gh-head-logo a:hover,
+.gh-head-logo a {
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+/* Add this near the top of your theme.css, after the root variables */
+.gh-head .gh-head-brand .gh-head-logo a,
+.gh-head .gh-head-brand .gh-head-logo a:hover,
+.gh-head-logo a,
+.gh-head-logo a:hover,
+a.gh-head-logo,
+a.gh-head-logo:hover {
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+/* Add this near your other component styles */
+.related-wrapper {
+    background-color: var(--bg-color);  /* This will be #121212 in dark mode */
+    margin-top: 96px;
+    padding-bottom: 64px;
+    padding-top: 48px;
+}
+
+/* Footer link styles with high specificity */
+.gh-foot a,
+.gh-foot .gh-policy-links a,
+.gh-foot-inner a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.gh-foot a:hover,
+.gh-foot .gh-policy-links a:hover,
+.gh-foot-inner a:hover {
+    color: var(--brand-purple);
+    opacity: 1;
+}
+
+/* Override any other footer link styles */
+.gh-foot-inner a,
+.gh-foot-inner .gh-policy-links a {
+    color: var(--text-color) !important;
+    transition: color 0.3s ease;
+}
+
+.gh-foot-inner a:hover,
+.gh-foot-inner .gh-policy-links a:hover {
+    color: var(--brand-purple) !important;
+    opacity: 1 !important;
+}
+
+/* Update site-content padding */
+.site-content {
+    flex-grow: 1;
+    padding-bottom: 15;  /* Reduced from 30px */
+    padding-top: 15;     /* Reduced from 30px */
+}
+
+/* Adjust article spacing if needed */
+.gh-article {
+    margin-top: 0;
+}
+
+/* If you need some minimal spacing between header and content */
+.gh-article-header {
+    padding-top: 1rem;
+}
+
+/* Post page styles - ensure all elements use post background color */
+.post-template .gh-content,
+.post-template .post,
+.post-template .post-wrapper,
+.post-template .gh-article,
+.post-template .gh-article-header,
+.post-template .gh-canvas,
+.post-template .article,
+.post-template .site-content,
+.post-template .gh-content,
+.post-template .gh-article-meta,
+.post-template .gh-article .gh-canvas,
+.post-template .gh-outer,
+.page-template .gh-content,
+.page-template .post,
+.page-template .post-wrapper,
+.page-template .gh-article,
+.page-template .gh-article-header,
+.page-template .gh-canvas,
+.page-template .article,
+.page-template .site-content,
+.page-template .gh-article-meta,
+.page-template .gh-article .gh-canvas,
+.page-template .gh-outer {
+  background-color: var(--bg-color);
+}
+
+/* Ensure article meta section uses correct background */
+.gh-article-header,
+.gh-article-meta,
+.gh-article .gh-canvas {
+  background-color: var(--bg-color);
+}
+
+/* Keep homepage cards with the card color */
+.home-template .post,
+.home-template .post-wrapper,
+.home-template .post-footer {
+  background-color: var(--card-color);
+}
+
+/* All posts and cards should use bg-color */
+.post,
+.post-wrapper,
+.post-footer {
+  background-color: var(--bg-color);
+}
+
+/* Target ONLY homepage post cards */
+.home-template .post,
+.home-template .post-wrapper,
+.home-template .post-footer {
+  background-color: var(--card-color);
+}
+
+/* Keep all other post/page elements black */
+.post-template .post,
+.post-template .post-wrapper,
+.post-template .post-footer,
+.page-template .post,
+.page-template .post-wrapper,
+.page-template .post-footer,
+.gh-content,
+.gh-article,
+.gh-article-header,
+.gh-canvas,
+.site-content {
+  background-color: var(--bg-color);
+}
+
+/* Force black background for all article and page content */
+.gh-canvas,
+.gh-article-header,
+.gh-article,
+.gh-content,
+.page-template .gh-canvas,
+.post-template .gh-canvas,
+.page .gh-canvas,
+.post .gh-canvas {
+  background-color: var(--bg-color) !important;  /* Using !important to override any other styles */
+}
+
+/* Remove any redundant background colors */
+.post-wrapper,
+.post-footer {
+  background-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .gh-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .gh-social-links a {
+    flex: 0 0 30%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .gh-foot-inner {
+    display: block; /* Ensure block layout for wrapping */
+    text-align: left;
+    padding: 0 10px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* For older browsers */
+  }
+
+  .gh-policy-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  .gh-policy-links a {
+    flex: 0 0 auto;
+    margin: 0 5px;
+  }
+
+  .gh-copyright {
+    display: block; /* Ensure block layout for wrapping */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* For older browsers */
+    white-space: normal; /* Ensure text can wrap */
+  }
+}
+
+.copyright-wrap {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word; /* For older browsers */
+  white-space: normal; /* Ensure text can wrap */
+}
