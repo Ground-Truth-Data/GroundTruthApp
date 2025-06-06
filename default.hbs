@@ -3,17 +3,18 @@
 
 <head>
     <style>
-        /* Apply Inter or Roboto font to all elements */
+        /* Apply Inter or Roboto font to all elements -test*/
+        
         * {
-            font-family: 'Inter', 'Roboto', sans-serif 
+            font-family: 'Inter', 'Roboto', sans-serif, Arial
         }
     </style>
     <script>
         if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.setAttribute('data-theme', 'dark');
         }
-        
     </script>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
@@ -335,3 +336,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+

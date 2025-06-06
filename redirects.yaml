@@ -1,0 +1,51 @@
+# This file contains redirects for your Ghost site
+# Format documentation: https://ghost.org/docs/themes/routing/
+
+301:
+  # Regular redirects for specific URLs
+  /intro-to-ground-truth/: /ground-truth-data-mission/
+  /ratings-of-mass-confusion-esg-and-corporate-environmental-impact/: /esg-monitoring-open-academia/
+  /tag/open-resources/: /
+  /do-we-have-enough-land-to-save-the-planet-2/: /do-we-have-enough-land-to-save-the-planet/
+  /spotlight/finnish-study-finds-site-assessments-now-60-cheaper-with-geospatial-data/: /finnish-study-finds-site-assessments-now-60-cheaper-with-geospatial-data/
+  /tech/an-assessment-of-high-value-datasets-how-accessible-are-these-datasets-across-europe/: /an-assessment-of-high-value-datasets-how-accessible-are-these-datasets-across-europe/
+  /tech/wisconsin-farms-businesses-receive-24m-in-funding-for-energy-saving-projects/: /wisconsin-farms-businesses-receive-24m-in-funding-for-energy-saving-projects/
+  /news/a-deal-on-sharing-benefits-from-genetic-resources-is-key-to-cop16s-success/: /a-deal-on-sharing-benefits-from-genetic-resources-is-key-to-cop16s-success/
+  /spotlight/mangrove-makeover-restoring-coasts-for-carbon-clean-seas/: /mangrove-makeover-restoring-coasts-for-carbon-clean-seas/
+  /tag/syndicated-commentary/: /tag/spotlight/
+  /is-reforesting-farmland-all-its-cracked-up-to-be-the-story-told-by-fungi/: /fungi-plants-shrubs-and-trees/
+  /tech/wwf-tool-helps-banks-spot-environmental-crime-risks/: /wwf-tool-helps-banks-spot-environmental-crime-risks/
+  /featured-work/: /
+  /tag/commentary/: /
+  /tag/original-tech/: /tag/tech-original/
+  /tag/ground-truthed-projects/: /
+  /tag/commentary-original/: /
+  /how-to-use-data-to-predict-forest-fires/: /environmental-data-resources-wildfires/
+  /tag/open-academia/: /
+  /forest-restoration-monitoring/: /tree-mapping-software/
+  /un-biodiversity-talks-stalled-but-protecting-nature-cannot-wait/xv: /un-biodiversity-talks-stalled-but-protecting-nature-cannot-wait/
+  /offsets-to-datasets-20-years-on/: /companies-are-buying-up-cheap-carbon-offsets-data-suggest-it-may-be-more-about-greenwashing-than-helping-the-climate/
+  /openforest-a-beacon-for-forest-monitoring-and-environmental-stewardship/: /dashboard-tree-forest-monitoring/
+  /explorer-land/: /open-forests-global-restoration/
+  /untitled-6/: /untitled-6/
+  /what-does-a-natural-forest-look-like/: /artificial-plant-trees-vs-natural-regen/
+  /untitled-2/: /
+  /the-inequality-in-tropical-/: /the-inequality-in-tropical-forest-data-collection-a-call-for-fairness/
+  /directive-detective-uncovering-the-new-rules-of-esg-reporting/: /reporting-for-duty-how-csrd-is-changing-the-esg-landscape/
+  /news/citizen-scientists-aiding-species-conservation-efforts-mongabay-mahima-samraik/: /citizen-scientists-aiding-species-conservation-efforts-mongabay-mahima-samraik/
+  /news/reforesting-the-amazon-brazil-americas-dfc-carbon-credits-mombak/: /reforesting-the-amazon-brazil-americas-dfc-carbon-credits-mombak/
+  /spotlight/data-shows-indonesian-social-forestry-excludes-women/: /data-shows-indonesian-social-forestry-excludes-women/
+  /spotlight/small-farmers-revive-brazils-forests-on-palm-oil-land-with-agroforestry/: /small-farmers-revive-brazils-forests-on-palm-oil-land-with-agroforestry/
+  /spotlight/unep-state-of-finance-for-nature-2023-nature-based-solutions-rio-convention/: /unep-state-of-finance-for-nature-2023-nature-based-solutions-rio-convention/
+  /tech/mangrove-restoration-tracker-tool-indonesia-interview-with-tom-worthington/: /mangrove-restoration-tracker-tool-indonesia-interview-with-tom-worthington/
+  /news/denmarks-billion-tree-bet/: /denmarks-billion-tree-bet/
+  /news/g20-minister-highlights-the-role-of-agroecology/: /g20-minister-highlights-the-role-of-agroecology/
+  /news/ground-truth-weekly-forest-news-november-28/: /ground-truth-weekly-forest-news-november-28/
+  /news/planting-forests-to-fight-droughts-floods-in-brazil/: /planting-forests-to-fight-droughts-floods-in-brazil/
+  /news/restoring-guinea-bissaus-mangroves-a-holistic-approach/: /restoring-guinea-bissaus-mangroves-a-holistic-approach/
+  /spotlight/can-chinas-ecological-redlines-gao-jixi/: /can-chinas-ecological-redlines-gao-jixi/
+  /news/prosecutors-request-halt-to-amazon-carbon-projects-mongabay-investigation-fernanda-wenzel/: /prosecutors-request-halt-to-amazon-carbon-projects-mongabay-investigation-fernanda-wenzel/
+  /news/umpqua-park-oregon-reforestation-wins-and-open-data/: /umpqua-park-oregon-reforestation-wins-and-open-data/
+  /spotlight/empowering-women-to-restore-africas-degraded-lands/: /empowering-women-to-restore-africas-degraded-lands/
+
+302:

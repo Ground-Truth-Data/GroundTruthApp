@@ -17,3 +17,5 @@ window.addEventListener('scroll', function() {
     
     lastScrollY = currentScrollY;
 });
+
+
