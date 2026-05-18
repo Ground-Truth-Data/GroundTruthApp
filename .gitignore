@@ -1,9 +1,7 @@
 node_modules/
 .DS_Store
 *.zip
-../*
-../../*
-../../../*
 
-
-
+# Local preview scaffolding — not part of the Ghost theme
+gc-banner-preview.html
+assets/images/gt-homepage-bg.jpeg
