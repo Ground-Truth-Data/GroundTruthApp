@@ -332,6 +332,166 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+{{!-- ========================= GetCache pop-over banner ========================= --}}
+<div id="gc-modal" class="gc-modal" hidden>
+    <div class="gc-modal__backdrop" data-gc-close></div>
+    <div class="gc-modal__card" role="dialog" aria-modal="true" aria-labelledby="gc-modal-title">
+        <button class="gc-modal__close" data-gc-close aria-label="Close">&times;</button>
+        <img class="gc-modal__logo" src="{{asset "images/gc-logo.png"}}" alt="GetCache">
+        <h2 id="gc-modal-title" class="gc-modal__title">Welcome planters 🌲✌️</h2>
+        <p class="gc-modal__text">
+            Check out the <strong>GetCache</strong> mobile app
+        </p>
+        <a class="gc-modal__cta" href="https://www.retreever.org/getcache" target="_blank" rel="noopener">
+            Check out GetCache &rarr;
+        </a>
+        <button class="gc-modal__dismiss" data-gc-close>Maybe later</button>
+    </div>
+</div>
+
+<style>
+    .gc-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+    }
+    .gc-modal[hidden] { display: none; }
+    .gc-modal__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        animation: gc-fade 0.3s ease both;
+    }
+    .gc-modal__card {
+        position: relative;
+        width: 100%;
+        max-width: 460px;
+        background: radial-gradient(120% 120% at 50% 0%, #1c1c22 0%, #050506 70%);
+        border: 1px solid rgba(255, 209, 0, 0.35);
+        border-radius: 20px;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.5), 0 24px 60px rgba(0,0,0,0.7),
+                    0 0 50px rgba(255, 209, 0, 0.18);
+        padding: 36px 32px 32px;
+        text-align: center;
+        animation: gc-pop 0.45s cubic-bezier(0.18, 0.89, 0.32, 1.28) both;
+    }
+    .gc-modal__close {
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        background: none;
+        border: none;
+        color: #888;
+        font-size: 28px;
+        line-height: 1;
+        cursor: pointer;
+        transition: color 0.15s ease;
+    }
+    .gc-modal__close:hover { color: #fff; }
+    .gc-modal__logo {
+        width: 150px;
+        height: auto;
+        margin: 0 auto 6px;
+        filter: drop-shadow(0 6px 20px rgba(255, 209, 0, 0.35));
+    }
+    .gc-modal__title {
+        margin: 4px 0 10px;
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffd100;
+        letter-spacing: -0.01em;
+    }
+    .gc-modal__text {
+        margin: 0 auto 22px;
+        max-width: 340px;
+        font-size: 15.5px;
+        line-height: 1.55;
+        color: #d6d6da;
+    }
+    .gc-modal__text strong { color: #ffd100; }
+    .gc-modal__cta {
+        display: inline-block;
+        width: 100%;
+        padding: 14px 24px;
+        background: linear-gradient(180deg, #ffe14d 0%, #ffc400 100%);
+        color: #1a1500;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(255, 196, 0, 0.4);
+        transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .gc-modal__cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(255, 196, 0, 0.55);
+    }
+    .gc-modal__dismiss {
+        display: block;
+        margin: 14px auto 0;
+        background: none;
+        border: none;
+        color: #8a8a90;
+        font-size: 13.5px;
+        cursor: pointer;
+        transition: color 0.15s ease;
+    }
+    .gc-modal__dismiss:hover { color: #ccc; }
+    @keyframes gc-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes gc-pop {
+        from { opacity: 0; transform: translateY(24px) scale(0.92); }
+        to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @media (max-width: 480px) {
+        .gc-modal__card { padding: 30px 22px 26px; }
+        .gc-modal__logo { width: 120px; }
+        .gc-modal__title { font-size: 22px; }
+    }
+</style>
+
+<script>
+(function () {
+    var STORAGE_KEY = 'gc_modal_seen';
+    var DELAY_MS = 2000;
+
+    if (sessionStorage.getItem(STORAGE_KEY)) return;
+
+    var modal = document.getElementById('gc-modal');
+    if (!modal) return;
+
+    function closeModal() {
+        modal.hidden = true;
+        sessionStorage.setItem(STORAGE_KEY, '1');
+        document.removeEventListener('keydown', onKey);
+    }
+    function onKey(e) {
+        if (e.key === 'Escape') closeModal();
+    }
+
+    modal.querySelectorAll('[data-gc-close]').forEach(function (el) {
+        el.addEventListener('click', closeModal);
+    });
+    // Clicking the CTA also marks it seen
+    var cta = modal.querySelector('.gc-modal__cta');
+    if (cta) cta.addEventListener('click', function () {
+        sessionStorage.setItem(STORAGE_KEY, '1');
+    });
+
+    setTimeout(function () {
+        if (sessionStorage.getItem(STORAGE_KEY)) return;
+        modal.hidden = false;
+        document.addEventListener('keydown', onKey);
+    }, DELAY_MS);
+})();
+</script>
+{{!-- ======================= /GetCache pop-over banner ======================= --}}
+
 {{ghost_foot}}
 
 </body>
